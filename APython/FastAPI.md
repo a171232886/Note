@@ -252,7 +252,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
 
 2. GET请求
 
-   ![image-20240320143915006](images/FastAPI/image-20240320143915006-17109167566791.png)
+   ![image-20240320143915006](../images/FastAPI/image-20240320143915006-17109167566791.png)
 
 
 
@@ -260,11 +260,11 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
 
    - Content-Type: application/x-www-form-urlencoded
 
-     ![image-20240320144316878](images/FastAPI/image-20240320144316878-17109169988952.png)
+     ![image-20240320144316878](../images/FastAPI/image-20240320144316878-17109169988952.png)
 
    - Content-Type: application/json
 
-     ![image-20240320144435998](images/FastAPI/image-20240320144435998-17109170776093.png)
+     ![image-20240320144435998](../images/FastAPI/image-20240320144435998-17109170776093.png)
 
 
 
@@ -372,7 +372,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
 
 2. `uvicorn`的作用
 
-   ![image-20240320153737766](images/FastAPI/image-20240320153737766-17109202593524.png)
+   ![image-20240320153737766](../images/FastAPI/image-20240320153737766-17109202593524.png)
    
    
    
@@ -422,7 +422,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
 
    跳转到`http://127.0.0.1:8080/docs`。你将会看到**自动生成**的交互式 API 文档。
 
-   ![](images/FastAPI/a8e62671c86f423abf79e1f758546a9a.png)
+   ![](../images/FastAPI/a8e62671c86f423abf79e1f758546a9a.png)
 
 
 
@@ -430,7 +430,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
 
 ## 3.1 路径操作装饰器
 
-![](images/FastAPI/2ad5453536964fe3baa589d7fd424efe.png)
+![](../images/FastAPI/2ad5453536964fe3baa589d7fd424efe.png)
 
 1. fastapi支持各种请求方式（装饰器）：
 
@@ -672,7 +672,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
        return {"kd": kd}
    ```
 
-   ![](images/FastAPI/cdc5542c54d24f2c84df7ead5ab22490.png)
+   ![](../images/FastAPI/cdc5542c54d24f2c84df7ead5ab22490.png)
 
    在这个例子中，函数参数 city和xl 是可选的，并且默认值为 None。
 
@@ -903,7 +903,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
    
    ```
    
-   ![](images/FastAPI/2b608df2ff274c37b8756ed731eefaac.png)
+   ![](../images/FastAPI/2b608df2ff274c37b8756ed731eefaac.png)
 
 
 
@@ -1066,7 +1066,7 @@ app.mount("/static",StaticFiles(directory="statics"))
        return user
    ```
 
-   ![](images/FastAPI/82b9bedd33fa4effb1ff9f8295de0a25.png)
+   ![](../images/FastAPI/82b9bedd33fa4effb1ff9f8295de0a25.png)
 
 
 
@@ -1169,7 +1169,7 @@ async def read_item(item_id: str):
 3. jinja2是Flask作者开发的⼀个模板系统，起初是仿django模板的⼀个模板引擎，为Flask提供模板支持，由于其灵活，快速和安全等优点被广泛使用。
 
 4. 前后端不分离的开发
-    ![image-20240322092442739](images/FastAPI/image-20240322092442739-17110706844791.png)
+    ![image-20240322092442739](../images/FastAPI/image-20240322092442739-17110706844791.png)
 
 
 
@@ -1472,7 +1472,7 @@ async def read_item(item_id: str):
 
    - 跨域请求：地址（http协议，ip，端口）只要有一项不一样
 
-   ![image-20240402100445505](images/FastAPI/image-20240402100445505.png)
+   ![image-20240402100445505](../images/FastAPI/image-20240402100445505.png)
 
 
 
