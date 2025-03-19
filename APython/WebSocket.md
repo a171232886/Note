@@ -64,7 +64,7 @@ WebSocket 适合于需要频繁交互的应用，例如实时聊天应用、在�
 安装
 
 ```bash
-pip install python-socketio,websocket-client
+pip install python-socketio
 ```
 
 若要使用异步方式
