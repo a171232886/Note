@@ -117,6 +117,8 @@ git checkout -- readme.md
 
 	origin表示远程仓库（通常默认名为origin），后面是远程仓库的地址
 	
+	
+	
 2. 提交
 
    ```bash
@@ -124,21 +126,33 @@ git checkout -- readme.md
    git push -u origin main # 把本地的当前main，提交到远程库origin
    ```
 
+   注意，`git push`分为两种格式
+
+   - `git push <远程库名> <分支>`，此时远程仓库和本地仓库的分支名相同
+
+   - `git push <远程库名> <本地分支>:<远程分支>`，将本地仓库的`<本地分支>`提交到`<远程库名>:<远程分支>`上
+
+     
+
  3. 从远程下载最新版本（主分支）
 
-   ```bash
-   git clone git@github.com:a171232886/test.git
-   ```
-
- 4.  从远程下载名为dev1的分支
-
-   ```bash
-   git clone git@github.com:a171232886/test.git -d dev1
-   ```
+    ```
+    git clone git@github.com:a171232886/test.git
+    ```
 
     
 
+ 4. 从远程下载名为dev1的分支
+
+    ```
+    git clone git@github.com:a171232886/test.git -b dev1
+    ```
+
     
+
+​    
+
+​    
 
 ### 2.2 删除本地记录的远程库
 
@@ -370,9 +384,9 @@ git checkout -- readme.md
    ```
 
 
-   
 
-   
+
+
 
 ## 参看
 
