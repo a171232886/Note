@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://www.atlassian.com/git/tutorials/saving-changes/gitignore -->
+<html id="magnolia" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="fb:pages" content="115407078489594">
+<meta name="description" content="Git ignore patterns are used to exclude certain files in your working directory from your Git history. They can be local, global, or shared with your team.">
+<meta name="author" content="Atlassian">
+<link rel="canonical" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore">
+<title>
+.gitignore file - ignoring files in Git | Atlassian Git Tutorial
+</title>
+<style>body { display: none; }</style>
+<link href="https://wac-cdn.atlassian.com/" rel="preconnect">
+<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5RJSBR"></script><script type="text/javascript" src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/metal-head.min.js.下载"></script>
+<script type="text/javascript" src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/head.js.下载"></script>
+<link rel="alternate" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" hreflang="x-default">
+<link rel="alternate" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" hreflang="en">
+<link rel="alternate" href="https://www.atlassian.com/ja/git/tutorials/saving-changes/gitignore" hreflang="ja">
+<link rel="alternate" href="https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore" hreflang="fr">
+<link rel="alternate" href="https://www.atlassian.com/de/git/tutorials/saving-changes/gitignore" hreflang="de">
+<link rel="alternate" href="https://www.atlassian.com/es/git/tutorials/saving-changes/gitignore" hreflang="es">
+<link rel="alternate" href="https://www.atlassian.com/br/git/tutorials/saving-changes/gitignore" hreflang="pt-BR">
+<link rel="alternate" href="https://www.atlassian.com/zh/git/tutorials/saving-changes/gitignore" hreflang="zh-Hans">
+<link rel="alternate" href="https://www.atlassian.com/ko/git/tutorials/saving-changes/gitignore" hreflang="ko">
+<link rel="alternate" href="https://www.atlassian.com/ru/git/tutorials/saving-changes/gitignore" hreflang="ru">
+<link rel="alternate" href="https://www.atlassian.com/pl/git/tutorials/saving-changes/gitignore" hreflang="pl">
+<link rel="alternate" href="https://www.atlassian.com/it/git/tutorials/saving-changes/gitignore" hreflang="it">
+<link rel="alternate" href="https://www.atlassian.com/nl/git/tutorials/saving-changes/gitignore" hreflang="nl">
+<link rel="alternate" href="https://www.atlassian.com/hu/git/tutorials/saving-changes/gitignore" hreflang="hu">
+<link rel="apple-touch-icon" sizes="16x16" href="https://www.atlassian.com/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="32x32" href="https://www.atlassian.com/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.atlassian.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://www.atlassian.com/favicon-32x32.png" sizes="32x32">
+<meta name="theme-color" content="#205081">
+<meta property="og:title" content=".gitignore file - ignoring files in Git | Atlassian Git Tutorial">
+<meta property="og:description" content="Git ignore patterns are used to exclude certain files in your working directory from your Git history. They can be local, global, or shared with your team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.atlassian.com/git/tutorials/saving-changes/gitignore">
+<meta property="og:site_name" content="Atlassian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Atlassian">
+<script src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/jquery.js.下载"></script>
+<script type="text/javascript">
+window.featureFlags = "jiraTemplateGallery=showJiraTemplateGallery&amp;allowBundlesExistingSites=enableAllowBundlesExistingSites&amp;disableOptimizely=true&amp;enable_cut_onboarding_flow_in_half_variant=expcen_2603_enable_cut_onboarding_flow_in_half_variant&amp;enableRemoteAppSwitcher=true&amp;platform.navigation.atlassian-switcher.wrap-with-padding.enabled=true&amp;platform.navigation.atlassian-switcher.fetch-product-configuration-from-flight-deck-directly=true".split('&amp;')
+.reduce((flags, flagStr) => {
+const [flagKey, flagValue] = flagStr.split('=');
+return { ...flags, [flagKey]: flagValue };
+}, {})
+</script>
+<script type="text/javascript">
+window.cmsPageVariant = window.cmsPageVariant ? window.cmsPageVariant : window.featureFlags?.cmsVariant;
+</script>
+<script type="text/javascript">
+var LOCALIZED_PRICING_CONTENTFUL_SPACE = "3s3v3nq72la0";
+var LOCALIZED_PRICING_CONTENTFUL_ENVIRONMENT = "master";
+var LOCALIZED_PRICING_CONTENTFUL_ACCESS_TOKEN = "v5nSeyuO6dUxZX_Gh5OWEHOJHt3GYSKtyB7ySulLgHg";
+var LOCALIZED_CCP_PRICING_CONTENTFUL_ENVIRONMENT = "master";
+var LOCALIZED_CCP_PRICING_CONTENTFUL_ACCESS_TOKEN = "v5nSeyuO6dUxZX_Gh5OWEHOJHt3GYSKtyB7ySulLgHg";
+var LOCALIZED_PRICING_USE_GEO_CURRENCY = true;
+</script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="2.207.0/xid/atl-xid" src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/atl-xid.js.下载"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="2.207.0/ld/ldclient.min" src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/ldclient.min.js.下载"></script><script src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/atl-global-2.207.0.min.js.下载"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="2.207.0/gasv3/analytics-web-client.with-deps.amd.min" src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/analytics-web-client.with-deps.amd.min.js.下载"></script></head>
+<body id="gitignore" class="wac git tutorials saving-changes gitignore">
+<div id="header">
+<div class="tutorial-sidebar is-active">
+<div class="_bumper"></div>
+<div class="_wrap">
+<ol>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud" class="cms-link cms-link--text group-link">Learn Git</a>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud" class="cms-link cms-link--text tutorial-link">Learn Git with Bitbucket Cloud</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#create-the-repository" class="cms-link cms-link--text section-link">Create a Git repository</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#copy-and-add-files" class="cms-link cms-link--text section-link">Copy your Git repository and add files</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#pull-changes" class="cms-link cms-link--text section-link">Pull changes from your Git repository on Bitbucket Cloud</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud#git-branch-to-merge" class="cms-link cms-link--text section-link">Use a Git branch to merge a file</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud" class="cms-link cms-link--text tutorial-link">Learn about code review in Bitbucket Cloud</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#create-repository" class="cms-link cms-link--text section-link">Create a repository</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#clone-branch" class="cms-link cms-link--text section-link">Clone and make a change on a new branch</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#im-using-git" class="cms-link cms-link--text section-link">If you're using command line</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#im-using-sourcetree" class="cms-link cms-link--text section-link">If you're using Sourcetree</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-about-code-review-in-bitbucket-cloud#create-a-pull-request-to-merge-your-change" class="cms-link cms-link--text section-link">Create a pull request to merge your change</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/learn-branching-with-bitbucket-cloud" class="cms-link cms-link--text tutorial-link">Learn branching in Bitbucket Cloud</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/learn-branching-with-bitbucket-cloud#create-the-repository" class="cms-link cms-link--text section-link">Get set up</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-branching-with-bitbucket-cloud#review-branching-workflow" class="cms-link cms-link--text section-link">Review branching workflow</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket" class="cms-link cms-link--text tutorial-link">Learn undoing changes with Bitbucket Cloud</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket#git-status" class="cms-link cms-link--text section-link">git status</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket#git-log" class="cms-link cms-link--text section-link">git log</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket#git-reset" class="cms-link cms-link--text section-link">git reset</a>
+<a href="https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket#git-revert" class="cms-link cms-link--text section-link">git revert</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/what-is-version-control" class="cms-link cms-link--text group-link">Beginner</a>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/what-is-version-control" class="cms-link cms-link--text tutorial-link">What is version control</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/what-is-version-control#benefits-of-version-control" class="cms-link cms-link--text section-link">Benefits of version control</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/source-code-management" class="cms-link cms-link--text tutorial-link">Source Code Management</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/what-is-git" class="cms-link cms-link--text tutorial-link">What is Git</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#performance" class="cms-link cms-link--text section-link">Performance</a>
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#security" class="cms-link cms-link--text section-link">Security</a>
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#flexibility" class="cms-link cms-link--text section-link">Flexibility</a>
+<a href="https://www.atlassian.com/git/tutorials/what-is-git#version-control-with-git" class="cms-link cms-link--text section-link">Version control with Git</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/why-git" class="cms-link cms-link--text tutorial-link">Why Git for your Organization</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-developers" class="cms-link cms-link--text section-link">Git for developers</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-marketing" class="cms-link cms-link--text section-link">Git for marketing</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-product-management" class="cms-link cms-link--text section-link">Git for product management</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-designers" class="cms-link cms-link--text section-link">Git for designers</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-customer-support" class="cms-link cms-link--text section-link">Git for customer support</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-human-resources" class="cms-link cms-link--text section-link">Git for human resources</a>
+<a href="https://www.atlassian.com/git/tutorials/why-git#git-for-anyone-managing-budget" class="cms-link cms-link--text section-link">Git for anyone managing a budget</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/install-git" class="cms-link cms-link--text tutorial-link">Install Git</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/install-git#mac-os-x" class="cms-link cms-link--text section-link">Install Git on Mac OS X</a>
+<a href="https://www.atlassian.com/git/tutorials/install-git#windows" class="cms-link cms-link--text section-link">Install Git on Windows</a>
+<a href="https://www.atlassian.com/git/tutorials/install-git#linux" class="cms-link cms-link--text section-link">Install Git on Linux</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-ssh" class="cms-link cms-link--text tutorial-link">Git SSH</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/export-git-archive" class="cms-link cms-link--text tutorial-link">Git archive</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/gitops" class="cms-link cms-link--text tutorial-link">GitOps</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" class="cms-link cms-link--text tutorial-link">Git Cheatsheet</a>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository" class="cms-link cms-link--text group-link is-active" aria-hidden="false">Getting Started</a>
+<div aria-hidden="false" class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository" class="cms-link cms-link--text tutorial-link">Setting up a repository</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init" class="cms-link cms-link--text section-link">git init</a>
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone" class="cms-link cms-link--text section-link">git clone</a>
+<a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config" class="cms-link cms-link--text section-link">git config</a>
+<a href="https://www.atlassian.com/git/tutorials/git-alias" class="cms-link cms-link--text section-link">git alias</a>
+</div>
+</div>
+<div aria-hidden="false" class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/saving-changes" class="cms-link cms-link--text tutorial-link is-active" aria-hidden="false">Saving changes</a>
+<div aria-hidden="false" class="_toc is-active">
+<a href="https://www.atlassian.com/git/tutorials/saving-changes" class="cms-link cms-link--text section-link is-active" aria-hidden="false">git add</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/git-commit" class="cms-link cms-link--text section-link is-active" aria-hidden="false">git commit</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/git-diff" class="cms-link cms-link--text section-link is-active" aria-hidden="false">git diff</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash" class="cms-link cms-link--text section-link is-active" aria-hidden="false">git stash</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" class="cms-link cms-link--text section-link active-current-page-link active is-active" aria-hidden="false">.gitignore</a>
+</div>
+</div>
+<div aria-hidden="false" class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository" class="cms-link cms-link--text tutorial-link">Inspecting a repository</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository" class="cms-link cms-link--text section-link">git status</a>
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag" class="cms-link cms-link--text section-link">git tag</a>
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame" class="cms-link cms-link--text section-link">git blame</a>
+</div>
+</div>
+<div aria-hidden="false" class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes" class="cms-link cms-link--text tutorial-link">Undoing changes</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes" class="cms-link cms-link--text section-link">git checkout</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes/git-clean" class="cms-link cms-link--text section-link">git clean</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes/git-revert" class="cms-link cms-link--text section-link">git revert</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes/git-reset" class="cms-link cms-link--text section-link">git reset</a>
+<a href="https://www.atlassian.com/git/tutorials/undoing-changes/git-rm" class="cms-link cms-link--text section-link">git rm</a>
+</div>
+</div>
+<div aria-hidden="false" class="_group-wrap is-active">
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history" class="cms-link cms-link--text tutorial-link">Rewriting history</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-commit--amend" class="cms-link cms-link--text section-link">git commit --amend</a>
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" class="cms-link cms-link--text section-link">git rebase</a>
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase-i" class="cms-link cms-link--text section-link">git rebase -i</a>
+<a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog" class="cms-link cms-link--text section-link">git reflog</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/syncing" class="cms-link cms-link--text group-link">Collaborating</a>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/syncing" class="cms-link cms-link--text tutorial-link">Syncing</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/syncing" class="cms-link cms-link--text section-link">git remote</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing/git-fetch" class="cms-link cms-link--text section-link">git fetch</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing/git-push" class="cms-link cms-link--text section-link">git push</a>
+<a href="https://www.atlassian.com/git/tutorials/syncing/git-pull" class="cms-link cms-link--text section-link">git pull</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request" class="cms-link cms-link--text tutorial-link">Making a Pull Request</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request#how-it-works" class="cms-link cms-link--text section-link">How it works</a>
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request#example" class="cms-link cms-link--text section-link">Example</a>
+<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request#where-to-go" class="cms-link cms-link--text section-link">Where to go from here</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/using-branches" class="cms-link cms-link--text tutorial-link">Using branches</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/using-branches" class="cms-link cms-link--text section-link">git branch</a>
+<a href="https://www.atlassian.com/git/tutorials/using-branches/git-checkout" class="cms-link cms-link--text section-link">git checkout</a>
+<a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge" class="cms-link cms-link--text section-link">git merge</a>
+<a href="https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts" class="cms-link cms-link--text section-link">Merge conflicts</a>
+<a href="https://www.atlassian.com/git/tutorials/using-branches/merge-strategy" class="cms-link cms-link--text section-link">Merge strategies</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows" class="cms-link cms-link--text tutorial-link">Comparing workflows</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow" class="cms-link cms-link--text section-link">Centralized Workflow</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow" class="cms-link cms-link--text section-link">Feature Branch Workflow</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow" class="cms-link cms-link--text section-link">Gitflow Workflow</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow" class="cms-link cms-link--text section-link">Forking Workflow</a>
+</div>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration" class="cms-link cms-link--text group-link">Migrating to Git</a>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration" class="cms-link cms-link--text tutorial-link">SVN to Git - prepping for the migration</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#for-administrators" class="cms-link cms-link--text section-link">For administrators</a>
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#basic-git-commands" class="cms-link cms-link--text section-link">Basic Git commands</a>
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#git-migration-tools" class="cms-link cms-link--text section-link">Git Migration Tools</a>
+<a href="https://www.atlassian.com/git/tutorials/svn-to-git-prepping-your-team-migration#for-developers" class="cms-link cms-link--text section-link">For developers</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-overview" class="cms-link cms-link--text tutorial-link">Migrate to Git from SVN</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-prepare" class="cms-link cms-link--text tutorial-link">Prepare</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-convert" class="cms-link cms-link--text tutorial-link">Convert</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-synchronize" class="cms-link cms-link--text tutorial-link">Synchronize</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-share" class="cms-link cms-link--text tutorial-link">Share</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/migrating-migrate" class="cms-link cms-link--text tutorial-link">Migrate</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/perforce-git" class="cms-link cms-link--text tutorial-link">Perforce to Git - why to make the move</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/perforce-git-migration" class="cms-link cms-link--text tutorial-link">Migrating from Perforce to Git</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-move-repository" class="cms-link cms-link--text tutorial-link">How to move a Git repository with history</a>
+</div>
+</div>
+<div class="_group">
+<a href="https://www.atlassian.com/git/tutorials/advanced-overview" class="cms-link cms-link--text group-link">Advanced Tips</a>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/advanced-overview" class="cms-link cms-link--text tutorial-link">Advanced Git Tutorials</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing" class="cms-link cms-link--text tutorial-link">Merging vs. Rebasing</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#conceptual-overview" class="cms-link cms-link--text section-link">Conceptual Overview</a>
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing" class="cms-link cms-link--text section-link">The Golden Rule of Rebasing</a>
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#workflow-walkthrough" class="cms-link cms-link--text section-link">Workflow Walkthrough</a>
+<a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" class="cms-link cms-link--text tutorial-link">Resetting, Checking Out, and Reverting</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-log" class="cms-link cms-link--text tutorial-link">Advanced Git log</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/git-log#formatting-log-output" class="cms-link cms-link--text section-link">Formatting Log Output</a>
+<a href="https://www.atlassian.com/git/tutorials/git-log#filtering-the-commit-history" class="cms-link cms-link--text section-link">Filtering the Commit History</a>
+<a href="https://www.atlassian.com/git/tutorials/git-log#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-hooks" class="cms-link cms-link--text tutorial-link">Git Hooks</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#conceptual-overview" class="cms-link cms-link--text section-link">Conceptual Overview</a>
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#local-hooks" class="cms-link cms-link--text section-link">Local Hooks</a>
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#server-side-hooks" class="cms-link cms-link--text section-link">Server-side Hooks</a>
+<a href="https://www.atlassian.com/git/tutorials/git-hooks#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog" class="cms-link cms-link--text tutorial-link">Refs and the Reflog</a>
+<div aria-hidden="true" class="_toc">
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#hashes" class="cms-link cms-link--text section-link">Hashes</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#refs" class="cms-link cms-link--text section-link">Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#packed-refs" class="cms-link cms-link--text section-link">Packed Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#special-refs" class="cms-link cms-link--text section-link">Special Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#refspecs" class="cms-link cms-link--text section-link">Refspecs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#relative-refs" class="cms-link cms-link--text section-link">Relative Refs</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#the-reflog" class="cms-link cms-link--text section-link">The Reflog</a>
+<a href="https://www.atlassian.com/git/tutorials/refs-and-the-reflog#summary" class="cms-link cms-link--text section-link">Summary</a>
+</div>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-submodule" class="cms-link cms-link--text tutorial-link">Git submodules</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-subtree" class="cms-link cms-link--text tutorial-link">Git subtree</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/big-repositories" class="cms-link cms-link--text tutorial-link">Large repositories in Git</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-lfs" class="cms-link cms-link--text tutorial-link">Git LFS</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-gc" class="cms-link cms-link--text tutorial-link">Git gc</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-prune" class="cms-link cms-link--text tutorial-link">Git prune</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-bash" class="cms-link cms-link--text tutorial-link">Git Bash</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/dotfiles" class="cms-link cms-link--text tutorial-link">How to store dotfiles</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/cherry-pick" class="cms-link cms-link--text tutorial-link">Git Cherry Pick</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/gitk" class="cms-link cms-link--text tutorial-link">GitK</a>
+</div>
+<div aria-hidden="true" class="_group-wrap">
+<a href="https://www.atlassian.com/git/tutorials/git-show" class="cms-link cms-link--text tutorial-link">Git-show</a>
+</div>
+</div>
+</ol>
+</div>
+</div>
+<div class="hamburger ">
+<div class="_layer -top"></div>
+<div class="_layer -mid"></div>
+<div class="_layer -bottom"></div>
+</div>
+<div class="primary-nav">
+<div class="_wrapper">
+<ul class="_nav-list">
+<div>
+<li>
+<a href="https://www.atlassian.com/git" class="cms-link cms-link--text _nav-item -home">Home</a>
+</li>
+</div>
+<div>
+<li class="tutorials-nav" id="tutorials-nav-mobile">
+<h4 class="_nav-item -tutorials">Tutorials</h4>
+<div class="_sublist"></div>
+</li>
+<li>
+<a href="https://www.atlassian.com/git/tutorials" class="cms-link cms-link--text _nav-item -tutorials">Tutorials</a>
+</li>
+</div>
+<div>
+<li>
+<a href="https://www.atlassian.com/git/articles" class="cms-link cms-link--text _nav-item -articles">Articles</a>
+</li>
+</div>
+<div>
+<li>
+<a href="https://www.atlassian.com/git/glossary" class="cms-link cms-link--text _nav-item -glossary">Glossary</a>
+</li>
+</div>
+</ul>
+</div>
+</div>
+<div class="topbar is-tutorial">
+<div class="_header -is-tutorial">
+<a href="https://www.atlassian.com/git/tutorials" class="active">Tutorials</a>
+</div>
+</div>
+<form class="newsletter">
+<input class="is-empty _input" type="email" placeholder="Enter Your Email For Git News">
+<button type="submit" class="_status icon-email-submit">Submit</button>
+</form>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#footer" class="button green-hollow secondary newsletter-cta">Sign up</a>
+<a href="https://www.atlassian.com/git/search" class="search-button search-open ">
+<span class="_link icon-search">Search</span>
+</a>
+<a href="https://www.atlassian.com/git" class="search-button search-close -in-page hidden">
+<span class="_link icon-search-close -close">Search</span>
+</a>
+</div>
+<div class="page-wrap is-active -gray-bg tutorial-detail">
+<div id="content" class="_content">
+<div class="tutorial-hero">
+<div class="g-column g-12-12 text-center">
+<img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/hero.svg" loading="lazy" alt="Saving changes">
+<h1> .gitignore
+</h1>
+<div class="g-column g-12-12 t-12-12 m-12-12 breadcrumbs">
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" class="cms-link cms-link--text xx-active-parent-page-link">git add</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" class="cms-link cms-link--text xx-active-parent-page-link">git commit</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" class="cms-link cms-link--text xx-active-parent-page-link">git diff</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" class="cms-link cms-link--text xx-active-parent-page-link">git stash</a>
+<a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore" class="cms-link cms-link--text xx-active-parent-page-link">.gitignore</a>
+</div></div></div>
+<div class="g-row">
+<div class="g-column g-12-12 g-centered">
+<p>Git sees every file in your working copy as one of three things:</p>
+<ol> <li>tracked - a file which has been previously staged or committed;</li> <li>untracked - a file which <em>has not</em> been staged or committed; or</li> <li>ignored - a file which Git has been explicitly told to ignore.</li> </ol>
+<p>Ignored files are usually build artifacts and machine generated files that can be derived from your repository source or should otherwise not be committed. Some common examples are:</p>
+<ul> <li>dependency caches, such as the contents of <code class="hljs language-bash">/node_modules</code> or <code class="hljs language-bash">/packages</code></li> <li>compiled code, such as <code class="hljs language-undefined">.o</code>, <code class="hljs language-undefined">.pyc</code>, and <code class="hljs language-undefined">.class</code> files</li> <li>build output directories, such as <code class="hljs language-bash">/bin</code>, <code class="hljs language-bash">/out</code>, or <code class="hljs language-bash">/target</code></li> <li>files generated at runtime, such as <code class="hljs language-bash">.<span class="hljs-built_in">log</span></code>, <code class="hljs language-undefined">.lock</code>, or <code class="hljs language-undefined">.tmp</code></li> <li>hidden system files, such as <code class="hljs language-undefined">.DS_Store</code> or <code class="hljs language-undefined">Thumbs.db</code></li> <li>personal IDE config files, such as <code class="hljs language-bash">.idea/workspace.xml</code></li> </ul>
+<p>Ignored files are tracked in a special file named <code class="hljs language-undefined">.gitignore</code> that is checked in at the root of your repository. There is no explicit git ignore command: instead the <code class="hljs language-undefined">.gitignore</code> file must be edited and committed by hand when you have new files that you wish to ignore. <code class="hljs language-undefined">.gitignore</code> files contain patterns that are matched against file names in your repository to determine whether or not they should be ignored.</p>
+<ul> <li>Ignoring files in Git <ul> <li><a data-event="clicked" data-uuid="4a21e395-720" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Git ignore patterns" data-label-english="Git ignore patterns" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns">Git ignore patterns</a></li> <li><a data-event="clicked" data-uuid="4a21e395-721" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Shared .gitignore files in your repository" data-label-english="Shared .gitignore files in your repository" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#shared">Shared .gitignore files in your repository</a></li> <li><a data-event="clicked" data-uuid="4a21e395-722" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Personal Git ignore rules" data-label-english="Personal Git ignore rules" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#personal-git-ignore-rules">Personal Git ignore rules</a></li> <li><a data-event="clicked" data-uuid="4a21e395-723" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Global Git ignore rules" data-label-english="Global Git ignore rules" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#global-git-ignore-rules">Global Git ignore rules</a></li> <li><a data-event="clicked" data-uuid="4a21e395-724" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Ignoring a previously committed file" data-label-english="Ignoring a previously committed file" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#ignoring-a-previously-committed">Ignoring a previously committed file</a></li> <li><a data-event="clicked" data-uuid="4a21e395-725" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Committing an ignored file" data-label-english="Committing an ignored file" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#committing-an-ignored-file">Committing an ignored file</a></li> <li><a data-event="clicked" data-uuid="4a21e395-726" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Stashing an ignored file" data-label-english="Stashing an ignored file" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#stashing-an-ignored-file">Stashing an ignored file</a></li> <li><a data-event="clicked" data-uuid="4a21e395-727" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Debugging .gitignore files" data-label-english="Debugging .gitignore files" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore#debugging">Debugging .gitignore files</a></li> </ul> </li> </ul>
+<h2 id="git-ignore-patterns"> Git ignore patterns
+</h2>
+<p><code class="hljs language-undefined">.gitignore</code> uses <a data-event="clicked" data-uuid="28b4a0d0-ea0" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="globbing patterns" data-label-english="globbing patterns" href="http://linux.die.net/man/7/glob">globbing patterns</a> to match against file names. You can construct your patterns using various symbols:</p>
+<table> <thead> <tr> <th>Pattern</th> <th>Example matches</th> <th>Explanation*</th> </tr> </thead> <tbody> <tr> <td> <code class="hljs language-bash">**/logs</code> </td> <td> <code class="hljs language-bash">logs/debug.log</code><br> <code class="hljs language-bash">logs/monday/foo.bar</code><br> <code class="hljs language-bash">build/logs/debug.log</code> </td> <td> You can prepend a pattern with a double asterisk to match directories anywhere in the repository. </td> </tr> <tr> <td> <code class="hljs language-js">**<span class="hljs-regexp">/logs/</span>debug.<span class="hljs-property">log</span></code> </td> <td> <code class="hljs language-bash">logs/debug.log</code><br> <code class="hljs language-bash">build/logs/debug.log</code><br> <em>but not</em><br> <code class="hljs language-bash">logs/build/debug.log</code> </td> <td> You can also use a double asterisk to match files based on their name and the name of their parent directory. </td> </tr> <tr> <td> <code class="hljs language-bash">*.<span class="hljs-built_in">log</span></code> </td> <td> <code class="hljs language-undefined">debug.log</code><br> <code class="hljs language-undefined">foo.log</code><br> <code class="hljs language-bash">.<span class="hljs-built_in">log</span></code><br> <code class="hljs language-bash">logs/debug.log</code> </td> <td> An asterisk is a wildcard that matches zero or more characters. </td> </tr> <tr> <td> <code class="hljs language-bash">*.<span class="hljs-built_in">log</span></code><br> <code class="hljs language-yml"><span class="hljs-type">!important.log</span></code> </td> <td> <code class="hljs language-undefined">debug.log</code><br> <code class="hljs language-undefined">trace.log</code><br> <em>but not</em><br> <code class="hljs language-undefined">important.log</code><br> <code class="hljs language-bash">logs/important.log</code> </td> <td> Prepending an exclamation mark to a pattern negates it. If a file matches a pattern, but <em>also</em> matches a negating pattern defined later in the file, it will not be ignored. </td> </tr> <tr> <td> <code class="hljs language-bash">*.<span class="hljs-built_in">log</span></code><br> <code class="hljs language-bash">!important/*.<span class="hljs-built_in">log</span></code><br> <code class="hljs language-undefined">trace.*</code> </td> <td> <code class="hljs language-undefined">debug.log</code><br> <code class="hljs language-bash">important/trace.log</code><br> <em>but not</em><br> <code class="hljs language-bash">important/debug.log</code> </td> <td> Patterns defined after a negating pattern will re-ignore any previously negated files. </td> </tr> <tr> <td> <code class="hljs language-bash">/debug.log</code> </td> <td> <code class="hljs language-undefined">debug.log</code><br> <em>but not</em><br> <code class="hljs language-bash">logs/debug.log</code> </td> <td> Prepending a slash matches files only in the repository root. </td> </tr> <tr> <td> <code class="hljs language-undefined">debug.log</code> </td> <td> <code class="hljs language-undefined">debug.log</code><br> <code class="hljs language-bash">logs/debug.log</code> </td> <td> By default, patterns match files in any directory </td> </tr> <tr> <td> <code class="hljs language-bash">debug?.<span class="hljs-built_in">log</span></code> </td> <td> <code class="hljs language-undefined">debug0.log</code><br> <code class="hljs language-undefined">debugg.log</code><br> <em>but not</em><br> <code class="hljs language-undefined">debug10.log</code> </td> <td> A question mark matches exactly one character. </td> </tr> <tr> <td> <code class="hljs language-bash">debug[0-9].<span class="hljs-built_in">log</span></code> </td> <td> <code class="hljs language-undefined">debug0.log</code><br> <code class="hljs language-undefined">debug1.log</code><br> <em>but not</em><br> <code class="hljs language-undefined">debug10.log</code> </td> <td> Square brackets can also be used to match a single character from a specified range. </td> </tr> <tr> <td> <code class="hljs language-bash">debug[01].<span class="hljs-built_in">log</span></code> </td> <td> <code class="hljs language-undefined">debug0.log</code><br> <code class="hljs language-undefined">debug1.log</code><br> <em>but not </em><br> <code class="hljs language-undefined">debug2.log</code><br> <code class="hljs language-undefined">debug01.log</code> </td> <td> Square brackets match a single character form the specified set. </td> </tr> <tr> <td> <code class="hljs language-bash">debug[!01].<span class="hljs-built_in">log</span></code> </td> <td> <code class="hljs language-undefined">debug2.log</code><br> <em>but not</em><br> <code class="hljs language-undefined">debug0.log</code><br> <code class="hljs language-undefined">debug1.log</code><br> <code class="hljs language-undefined">debug01.log</code> </td> <td> An exclamation mark can be used to match any character except one from the specified set. </td> </tr> <tr> <td> <code class="hljs language-bash">debug[a-z].<span class="hljs-built_in">log</span></code> </td> <td> <code class="hljs language-undefined">debuga.log</code><br> <code class="hljs language-undefined">debugb.log</code><br> <em>but not</em><br> <code class="hljs language-undefined">debug1.log</code> </td> <td> Ranges can be numeric or alphabetic. </td> </tr> <tr> <td> <code class="hljs language-undefined">logs</code> </td> <td> <code class="hljs language-undefined">logs</code><br> <code class="hljs language-bash">logs/debug.log</code><br> <code class="hljs language-bash">logs/latest/foo.bar</code><br> <code class="hljs language-bash">build/logs</code><br> <code class="hljs language-bash">build/logs/debug.log</code> </td> <td> If you don't append a slash, the pattern will match both files and the contents of directories with that name. In the example matches on the left, both directories and files named <em>logs</em> are ignored </td> </tr> <tr> <td> logs/ </td> <td> <code class="hljs language-bash">logs/debug.log</code><br> <code class="hljs language-bash">logs/latest/foo.bar</code><br> <code class="hljs language-bash">build/logs/foo.bar</code><br> <code class="hljs language-bash">build/logs/latest/debug.log</code> </td> <td> Appending a slash indicates the pattern is a directory. The entire contents of any directory in the repository matching that name – including all of its files and subdirectories – will be ignored </td> </tr> <tr> <td> <code class="hljs language-undefined">logs/</code><br> <code class="hljs language-bash">!logs/important.log</code> </td> <td> <code class="hljs language-bash">logs/debug.log</code><br> <code class="hljs language-bash">logs/important.log</code> </td> <td> Wait a minute! Shouldn't <code class="hljs language-bash">logs/important.log</code> be negated in the example on the left<br><br> Nope! Due to a performance-related quirk in Git, you <em>can not</em> negate a file that is ignored due to a pattern matching a directory </td> </tr> <tr> <td> <code class="hljs language-bash">logs/**/debug.log</code> </td> <td> <code class="hljs language-bash">logs/debug.log</code><br> <code class="hljs language-bash">logs/monday/debug.log</code><br> <code class="hljs language-bash">logs/monday/pm/debug.log</code> </td> <td> A double asterisk matches zero or more directories. </td> </tr> <tr> <td> <code class="hljs language-bash">logs/*day/debug.log</code> </td> <td> <code class="hljs language-bash">logs/monday/debug.log</code><br> <code class="hljs language-bash">logs/tuesday/debug.log</code><br> <em>but not</em><br> <code class="hljs language-bash">logs/latest/debug.log</code> </td> <td> Wildcards can be used in directory names as well. </td> </tr> <tr> <td> <code class="hljs language-bash">logs/debug.log</code> </td> <td> <code class="hljs language-bash">logs/debug.log</code><br> <em>but not</em><br> <code class="hljs language-undefined">debug.log</code><br> <code class="hljs language-bash">build/logs/debug.log</code> </td> <td> Patterns specifying a file in a particular directory are relative to the repository root. (You can prepend a slash if you like, but it doesn't do anything special.) </td> </tr> </tbody> </table>
+<p>** these explanations assume your .gitignore file is in the top level directory of your repository, as is the convention. If your repository has multiple .gitignore files, simply mentally replace "repository root" with "directory containing the .gitignore file" (and consider unifying them, for the sanity of your team).*</p>
+<p>In addition to these characters, you can use # to include comments in your <code class="hljs language-undefined">.gitignore</code> file:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-bash"><span class="hljs-comment">#&nbsp;ignore&nbsp;all&nbsp;logs</span>
+*.<span class="hljs-built_in">log</span></code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>You can use \ to escape <code class="hljs language-undefined">.gitignore</code> pattern characters if you have files or directories containing them:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-css">#&nbsp;ignore&nbsp;the&nbsp;file&nbsp;literally&nbsp;named&nbsp;foo<span class="hljs-selector-attr">[01]</span><span class="hljs-selector-class">.txt</span>
+foo\<span class="hljs-selector-attr">[01\]</span><span class="hljs-selector-class">.txt</span></code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<h2 id="shared"> Shared .gitignore files in your repository
+</h2>
+<p>Git ignore rules are usually defined in a <code class="hljs language-undefined">.gitignore</code> file at the root of your repository. However, you can choose to define multiple <code class="hljs language-undefined">.gitignore</code> files in different directories in your repository. Each pattern in a particular <code class="hljs language-undefined">.gitignore</code> file is tested relative to the directory containing that file. However the convention, and simplest approach, is to define a single <code class="hljs language-undefined">.gitignore</code> file in the root. As your <code class="hljs language-undefined">.gitignore</code> file is checked in, it is versioned like any other file in your repository and shared with your teammates when you push. Typically you should only include patterns in <code class="hljs language-undefined">.gitignore</code> that will benefit other users of the repository.</p>
+<h2 id="personal-git-ignore-rules"> Personal Git ignore rules
+</h2>
+<p>You can also define personal ignore patterns for a particular repository in a special file at <code class="hljs language-bash">.git/info/exclude</code>. These are not versioned, and not distributed with your repository, so it's an appropriate place to include patterns that will likely only benefit you. For example if you have a custom logging setup, or special development tools that produce files in your repository's working directory, you could consider adding them to <code class="hljs language-bash">.git/info/exclude</code> to prevent them from being accidentally committed to your repository.</p>
+<h2 id="global-git-ignore-rules"> Global Git ignore rules
+</h2>
+<p>In addition, you can define global Git ignore patterns for all repositories on your local system by setting the Git <code class="hljs language-undefined">core.excludesFile</code> property. You'll have to create this file yourself. If you're unsure where to put your global <code class="hljs language-undefined">.gitignore</code> file, your home directory isn't a bad choice (and makes it easy to find later). Once you've created the file, you'll need to configure its location with <code class="hljs language-undefined">git config</code>:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-bash">$&nbsp;<span class="hljs-built_in">touch</span>&nbsp;~/.gitignore
+$&nbsp;git&nbsp;config&nbsp;--global&nbsp;core.excludesFile&nbsp;~/.gitignore</code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>You should be careful what patterns you choose to globally ignore, as different file types are relevant for different projects. Special operating system files (e.g. <code class="hljs language-undefined">.DS_Store</code> and <code class="hljs language-undefined">thumbs.db</code>) or temporary files created by some developer tools are typical candidates for ignoring globally.</p>
+<h2 id="ignoring-a-previously-committed"> Ignoring a previously committed file
+</h2>
+<p>If you want to ignore a file that you've committed in the past, you'll need to delete the file from your repository and then add a <code class="hljs language-undefined">.gitignore</code> rule for it. Using the <code class="hljs language-css"><span class="hljs-attr">--cached</span></code> option with <code class="hljs language-bash">git <span class="hljs-built_in">rm</span></code> means that the file will be deleted from your repository, but will remain in your working directory as an ignored file.</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-bash">$&nbsp;<span class="hljs-built_in">echo</span>&nbsp;debug.log&nbsp;&gt;&gt;&nbsp;.gitignore
+&nbsp;&nbsp;
+$&nbsp;git&nbsp;<span class="hljs-built_in">rm</span>&nbsp;--cached&nbsp;debug.log
+<span class="hljs-built_in">rm</span>&nbsp;<span class="hljs-string">'debug.log'</span>
+&nbsp;&nbsp;
+$&nbsp;git&nbsp;commit&nbsp;-m&nbsp;<span class="hljs-string">"Start&nbsp;ignoring&nbsp;debug.log"</span></code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>You can omit the <code class="hljs language-css"><span class="hljs-attr">--cached</span></code> option if you want to delete the file from both the repository and your local file system.</p>
+<h2 id="committing-an-ignored-file"> Committing an ignored file
+</h2>
+<p>It is possible to force an ignored file to be committed to the repository using the <code class="hljs language-undefined">-f</code> (or <code class="hljs language-css"><span class="hljs-attr">--force</span></code>) option with <code class="hljs language-undefined">git add</code>:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-bash">$&nbsp;<span class="hljs-built_in">cat</span>&nbsp;.gitignore
+*.<span class="hljs-built_in">log</span>
+&nbsp;&nbsp;
+$&nbsp;git&nbsp;add&nbsp;-f&nbsp;debug.log
+&nbsp;&nbsp;
+$&nbsp;git&nbsp;commit&nbsp;-m&nbsp;<span class="hljs-string">"Force&nbsp;adding&nbsp;debug.log"</span></code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>You might consider doing this if you have a general pattern (like <code class="hljs language-bash">*.<span class="hljs-built_in">log</span></code>) defined, but you want to commit a specific file. However a better solution is to define an exception to the general rule:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-bash">$&nbsp;<span class="hljs-built_in">echo</span>&nbsp;!debug.log&nbsp;&gt;&gt;&nbsp;.gitignore
+&nbsp;&nbsp;
+$&nbsp;<span class="hljs-built_in">cat</span>&nbsp;.gitignore
+*.<span class="hljs-built_in">log</span>
+!debug.log
+&nbsp;&nbsp;
+$&nbsp;git&nbsp;add&nbsp;debug.log
+&nbsp;&nbsp;
+$&nbsp;git&nbsp;commit&nbsp;-m&nbsp;<span class="hljs-string">"Adding&nbsp;debug.log"</span></code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>This approach is more obvious, and less confusing, for your teammates.</p>
+<h2 id="stashing-an-ignored-file"> Stashing an ignored file
+</h2>
+<p><code class="hljs language-undefined">git stash</code> is a powerful Git feature for temporarily shelving and reverting local changes, allowing you to re-apply them later on. As you'd expect, by default <code class="hljs language-undefined">git stash</code> ignores ignored files and only stashes changes to files that are tracked by Git. However, you can invoke <a data-event="clicked" data-uuid="a2b120cc-651" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="git stash with the --all option" data-label-english="git stash with the --all option" href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash#stashing-untracked-or-ignored">git stash with the --all option</a> to stash changes to ignored and untracked files as well.</p>
+<h2 id="debugging"> Debugging .gitignore files
+</h2>
+<p>If you have complicated <code class="hljs language-undefined">.gitignore</code> patterns, or patterns spread over multiple <code class="hljs language-undefined">.gitignore</code> files, it can be difficult to track down why a particular file is being ignored. You can use the <code class="hljs language-undefined">git check-ignore</code> command with the <code class="hljs language-undefined">-v</code> (or <code class="hljs language-css"><span class="hljs-attr">--verbose</span></code>) option to determine which pattern is causing a particular file to be ignored:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-bash">$&nbsp;git&nbsp;check-ignore&nbsp;-v&nbsp;debug.log
+.gitignore:3:*.<span class="hljs-built_in">log</span>&nbsp;&nbsp;debug.log</code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>The output shows:</p>
+<div class="component component--codeblock">
+<pre><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">file</span>&nbsp;<span class="hljs-attr">containing</span>&nbsp;<span class="hljs-attr">the</span>&nbsp;<span class="hljs-attr">pattern</span>&gt;</span>&nbsp;:&nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">line</span>&nbsp;<span class="hljs-attr">number</span>&nbsp;<span class="hljs-attr">of</span>&nbsp;<span class="hljs-attr">the</span>&nbsp;<span class="hljs-attr">pattern</span>&gt;</span>&nbsp;:&nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">pattern</span>&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">file</span>&nbsp;<span class="hljs-attr">name</span>&gt;</span></code></pre>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.CodeBlock",
+"params": {
+}
+}
+</script>
+<p>You can pass multiple file names to <code class="hljs language-undefined">git check-ignore</code> if you like, and the names themselves don't even have to correspond to files that exist in your repository.</p>
+</div></div>
+<div id="related-post-sidebar" class="related-post">
+<div class="related-post--text">
+<p>Ready to learn Git?</p> <p>Try this interactive tutorial.</p>
+</div>
+<a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud" class="button green-solid standard related-post--link">Get started now</a>
+</div>
+<div class="_footer">
+<div class="g-column g-6-12 g-centered">
+<div class="_hero">
+<img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/hero(1).svg" loading="lazy" alt="Inspecting a repository">
+</div>
+<h5> Next up:
+</h5>
+<h4> Inspecting a repository
+</h4>
+<a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository" class="cms-link cms-link--text">Start next tutorial</a>
+</div></div>
+</div>
+</div>
+<div id="footer" class="footer is-tutorial ">
+<div class="g-row _atlassian-logo">
+<div class="g-column g-12-12">
+<h5> Powered By
+</h5>
+<a href="https://bitbucket.org/" class="cms-link cms-link--image"><img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/Bitbucket-white.svg" loading="lazy" alt="Atlassian"></a>
+</div></div>
+<div class="g-row">
+<div class="g-column g-4-12 t-12-12 m-12-12 t-gutterless">
+<h6> Recommend
+</h6>
+<a href="https://twitter.com/home?status=Switching%20to%20%23Git?%20Use%20the%20Atlassian%20Git%20tutorials%20to%20jumpstart%20your%20training%20in%20Git%20commands%20and%20workflows.%20https://www.atlassian.com/git" class="cms-link cms-link--image social-code"><img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/icon-twitter.svg" loading="lazy" alt="Twitter"></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.atlassian.com/git" class="cms-link cms-link--image social-code"><img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/icon-facebook.svg" loading="lazy" alt="Facebook"></a>
+<a href="https://plus.google.com/share?url=https://www.atlassian.com/git" class="cms-link cms-link--image social-code"><img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/icon-gplus.svg" loading="lazy" alt="GooglePlus"></a>
+</div><div class="g-column g-4-12 t-12-12 m-12-12 t-gutterless">
+<h6> Want future articles?
+</h6>
+<form class="newsletter">
+<input class="is-empty _input" type="email" placeholder="Enter Your Email For Git News">
+<button type="submit" class="_status icon-email-submit">Submit</button>
+</form>
+</div><div class="g-column g-4-12 t-12-12 m-12-12 t-gutterless">
+<h6> Site hosted by
+</h6>
+<a href="https://www.atlassian.com/" class="cms-link cms-link--image xx-active-parent-page-link"><img src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/Atlassian-horizontal-white-rgb.svg" loading="lazy" alt="Bitbucket" class="_bitbucket-logo"></a>
+</div></div>
+<div class="g-row">
+<div class="g-column g-12-12 t-12-12 m-12-12">
+<p class="license"><a class="icon-global-cclicense" data-event="clicked" data-uuid="028d468a-750" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="creativecommons.org" data-label-english="creativecommons.org" href="http://creativecommons.org/licenses/by/2.5/au/" rel="nofollow">creativecommons.org</a>Except where otherwise noted, all content is licensed under a <a data-event="clicked" data-uuid="028d468a-751" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket" data-label="Creative Commons Attribution 2.5 Australia License" data-label-english="Creative Commons Attribution 2.5 Australia License" href="http://creativecommons.org/licenses/by/2.5/au/" rel="nofollow">Creative Commons Attribution 2.5 Australia License</a>.</p> <style type="text/css">.tutorial-sidebar ._group > a:hover { color: #ccc !important; } .tutorial-sidebar ._group-wrap > a:hover, .tutorial-sidebar ._toc > a:hover { color: #fff; } </style>
+</div></div>
+</div>
+<script type="text/x-component">
+{
+"type":"imkt.components.PageLeaveTracking",
+"params": {
+}
+}
+</script>
+<script type="text/javascript">
+var HTTP_PREFIX = "";
+var FEATURE_FLAG_USE_GDPR = true;
+</script>
+<script type="text/javascript" src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/git-app-lite.js.下载"></script>
+<link rel="stylesheet" href="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/site.css">
+<script type="text/javascript">
+(function(){
+var imkt = window.imkt = window.imkt || {};
+imkt.isEditMode = false;
+imkt.isProduction = true;
+imkt.constants = imkt.constants || {};
+imkt.constants.rootPath = "/";
+imkt.constants.assetPath = "https://wac-cdn.atlassian.com/static/master/5800" + "/assets/";
+imkt.constants.libPath = imkt.constants.assetPath + "bower_components/";
+imkt.constants.cdnVersionQuery = "?cdnVersion=1178";
+imkt.constants.isDevUser = false;
+imkt.constants.isFreeEnabled = true;
+imkt.constants.getUserAccounts = false;
+imkt.constants.headerLoginMenu = true;
+imkt.constants.public = true;
+imkt.constants.mobileBreakpoint = 640;
+})();
+</script>
+<script type="text/x-component">
+{
+"type":"imkt.pages.WACPage",
+"params": {
+}
+}
+</script>
+<script>
+function initializeATLAnalytics() {
+var pageViewProperties = { contentSite: 'Git Microsite', contentType: 'Microsite', contentProduct: 'Bitbucket' };
+/* get url path, convert to dash format and add it to page view properties. */
+var originProduct = window.location.pathname;
+pageViewProperties.originProduct = "wac" + (originProduct === '/' ? "" : originProduct.replace(new RegExp('/', 'g'),"-"));
+if (typeof ace !== 'undefined') {
+ace.analytics.Initializer.initWithPageAnalytics('kiv6wyh2nw', pageViewProperties, null, null, window.atlGlobalLoadStart);
+}
+}
+</script>
+<script type="text/javascript">
+/**
+* function to load external js through javascript.
+*
+* @param url - javascript url
+* @param location - location of the dom (e.g. document.head)
+*/
+var loadExternalJS = function(url, location, callback){
+var scriptTag = document.createElement('script');
+scriptTag.src = url;
+scriptTag.type = 'text/javascript';
+/* Then bind the event to the callback function.
+There are several events for cross browser compatibility. */
+scriptTag.onreadystatechange = callback;
+scriptTag.onload = callback;
+window.atlGlobalLoadStart = new Date();
+/* Fire the loading */
+location.appendChild(scriptTag);
+};
+</script>
+<script type="text/javascript" class="optanon-category-2">
+loadExternalJS("https://atl-global.atlassian.com/js/atl-global.min.js", document.body, initializeATLAnalytics);
+</script><script src="./_gitignore file - ignoring files in Git _ Atlassian Git Tutorial_files/atl-global.min.js.下载" type="text/javascript"></script>
+
+
+
+</body><!-- LastRendered: Aug 24, 2023 11:53:07 PM --></html>

@@ -104,7 +104,7 @@ project是主项目，module是子项目
 
    在Gitlink上可以看到
 
-   ![image-20250313152624639](../images/Git与子模块/image-20250313152624639.png)
+   ![image-20250313152624639](images/Git子模块与子树/image-20250313152624639.png)
 
 
 
@@ -206,7 +206,7 @@ project是主项目，module是子项目
    
    远程仓库
    
-   ![image-20250313154751282](../images/Git与子模块/image-20250313154751282.png)
+   ![image-20250313154751282](images/Git子模块与子树/image-20250313154751282.png)
    
    （子项目的commit号没有发生变化）
    
@@ -304,7 +304,7 @@ project是主项目，module是子项目
 
    远程仓库
 
-   ![image-20250313162909078](../images/Git与子模块/image-20250313162909078.png)
+   ![image-20250313162909078](images/Git子模块与子树/image-20250313162909078.png)
    
    观察到module的commit号更新了
 

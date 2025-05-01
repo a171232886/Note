@@ -262,7 +262,7 @@ git checkout -- readme.md
 - 当`Dev2`修改完成，，合并到`main1`时，冲突需要手动调整
 - 因为`Dev2`是基于`main0`生成，而此时主分支已经到了`main1`
 
-<img src="../images/git笔记/image-20230320143929704.png" alt="image-20230320143929704" style="zoom:50%;" />
+<img src="images/Git基础使用/image-20230320143929704.png" alt="image-20230320143929704" style="zoom:50%;" />
 
 #### 2.4.2 冲突解决
 
@@ -323,13 +323,13 @@ git checkout -- readme.md
 
 1. 定位文件开始修改
 
-   ![image-20230316162243043](/images/git笔记/image-20230316162243043.png)
+   ![image-20230316162243043](images/Git基础使用/image-20230316162243043.png)
 
 
 
 
 2. 根据提示选择使用哪份内容，最后选择合并
-   ![image-20230316162411275](/images/git笔记/image-20230316162411275.png)
+   ![image-20230316162411275](images/Git基础使用/image-20230316162411275.png)
 
 
 
