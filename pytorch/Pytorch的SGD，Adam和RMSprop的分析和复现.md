@@ -17,7 +17,7 @@ categories:
 <!--more-->
 
 <div align="center"> 
-<img src="../images/Pytorch的SGD，Adam和RMSprop的分析和复现/0.png" width="60%"> 
+<img src="images/Pytorch的SGD，Adam和RMSprop的分析和复现/0.png" width="60%"> 
 </div> 
 
 说的已经比较明白了，但有三点要注意：
@@ -38,7 +38,7 @@ categories:
 # Adam
 [官方文档](https://pytorch.org/docs/1.10.0/generated/torch.optim.Adam.html#torch.optim.Adam)
 <div align="center"> 
-<img src="../images/Pytorch的SGD，Adam和RMSprop的分析和复现/1.png" width="60%"> 
+<img src="images/Pytorch的SGD，Adam和RMSprop的分析和复现/1.png" width="60%"> 
 </div> 
 注意：
 
@@ -49,7 +49,7 @@ amsgrad分支不同，实际情况为
 
 # RMSprop
 <div align="center"> 
-<img src="../images/Pytorch的SGD，Adam和RMSprop的分析和复现/2.png" width="60%"> 
+<img src="images/Pytorch的SGD，Adam和RMSprop的分析和复现/2.png" width="60%"> 
 </div> 
 
 

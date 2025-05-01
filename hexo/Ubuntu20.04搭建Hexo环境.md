@@ -44,7 +44,7 @@ hexo s
 
 浏览器打开http://localhost:4000/
 
-<img src="../images/Ubutnu20.04搭建Hexo环境/image-20221127141624143.png" alt="image-20221127141624143" style="zoom:50%;" />
+<img src="images/Ubutnu20.04搭建Hexo环境/image-20221127141624143.png" alt="image-20221127141624143" style="zoom:50%;" />
 
 
 
@@ -100,7 +100,7 @@ sudo n stable
 （这里使用了ssh连接到了ubutnu虚拟机）
 左侧编辑，右侧预览，也能在win10中的浏览器打开预览版的网页，只是地址变成了`http://localhost:4001/`。
 
-<img src="../images/Ubutnu20.04搭建Hexo环境/image-20221127143421614.png" alt="image-20221127143421614" style="zoom:80%;" />
+<img src="images/Ubutnu20.04搭建Hexo环境/image-20221127143421614.png" alt="image-20221127143421614" style="zoom:80%;" />
 
 
 # 5. 参考

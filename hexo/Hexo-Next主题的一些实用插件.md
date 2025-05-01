@@ -98,7 +98,7 @@ moon_menu:
 包括了种类，预览效果和使用方式。
 
 <div align="center"> 
-<img src="../images/Hexo-Next主题的一些实用插件/0.png" width="80%"> 
+<img src="images/Hexo-Next主题的一些实用插件/0.png" width="80%"> 
 </div> 
 
 

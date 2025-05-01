@@ -33,6 +33,6 @@ creative_commons:
 
 # 效果
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8添加CC协议/0.png" width="80%"> 
+<img src="images/Hexo-NexT8-8添加CC协议/0.png" width="80%"> 
 </div> 
 

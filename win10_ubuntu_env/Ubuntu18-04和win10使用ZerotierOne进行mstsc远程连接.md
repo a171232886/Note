@@ -47,7 +47,7 @@ categories:
 
 Ubuntu最新版安装文件[官方下载地址](https://ubuntu.com/download/desktop)（写这篇文章时最新的是20.04.1）。按照我以往的习惯，不会安装最新版本的，理由是在使用最新版本时遇到问题，网上可能还没有经验分享。Ubuntu 18.04.4安装文件[官方下载地址](https://ubuntu.com/download/alternative-downloads)，注意网页要下拉才能看见
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/0.png" width="80%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/0.png" width="80%"> 
 </div> 
 
 
@@ -129,7 +129,7 @@ sudo adduser dogdog
 
 - 接着输入一些无关紧要的信息，如无误，输入Y并回车：
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/1.png" width="60%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/1.png" width="60%"> 
 </div> 
 
 2. 设置新用户的sudo权限。打开终端：
@@ -138,7 +138,7 @@ sudo gedit /etc/sudoers
 ```
 - 添加‘’dogdog ALL=(ALL:ALL) ALL‘’，保存退出
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/2.png" width="80%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/2.png" width="80%"> 
 </div> 
 
 3. 配置文件
@@ -162,7 +162,7 @@ echo xfce4-session >~/.xsession
   - 按照提示即可
 - 这里要提醒一下，你登录进去后，Networks才是你创建的“局域网”。（第一次给妹子表演如何用Zerotier One时，小王同学表演崩了就是因为没找到这个“局域网”）
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/3.png" width="80%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/3.png" width="80%"> 
 </div> 
 
 
@@ -182,10 +182,10 @@ sudo zerotier-cli join 你的network ID
 - Ubuntu即使有多个用户，加入一次Network即可对所有用户生效
 - Ubuntu加入后，登录Zerotier One中进入到你的Network
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/4.png" width="80%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/4.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/5.png" width="80%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/5.png" width="80%"> 
 </div> 
 
  
@@ -194,25 +194,25 @@ sudo zerotier-cli join 你的network ID
 
 - 找到新加入的设备，在前面打钩（表示授权），并可以修改备注。	小王同学建议先改备注，后打√。Managed IPs一栏就是该设备在这个“局域网”的IP地址。“局域网”内部的设备可通过这个IP相互访问。
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/6.png" width="60%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/6.png" width="60%"> 
 </div> 
 
 ## 3. 安装在Win10上
 - 安装文件下载：[官网连接](https://zerotier.com/download/)
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/7.png" width="60%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/7.png" width="60%"> 
 </div> 
 
 
 - 安装好之后运行，在任务栏图标右键，选 join networks
 <div align="center"> 
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/8.png" width="50%"> 
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/8.png" width="50%"> 
 </div> 
 - 输入你的network ID，然后join。你的win10申请加入后，在Zerotier One中进入到你的Network，找到新加入的设备，在前面打钩（表示授权）同意申请。（同上述Ubuntu对应步骤）
 - 之后win10应该会弹出下图“网络”，点是。然后在你在网络名称之前出现对勾，就是上图蓝色马赛克之前的那个√。
 
 <div align="center">
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/9.png" width="20%">
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/9.png" width="20%">
 </div>
 
 # mstsc的使用
@@ -220,18 +220,18 @@ sudo zerotier-cli join 你的network ID
 1. 打开“运行”，输入“mstsc”，回车。
 
 <div align="center">
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/10.png" width="30%" height="50%">
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/10.png" width="30%" height="50%">
 </div>
 
 <div align="center">
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/11.png" width="50%" height="80%">
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/11.png" width="50%" height="80%">
 </div>
 
 
 2. 出现对话框，输入“局域网”内的IP地址，回车
 
 <div align="center">
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/12.png" width="40%" >
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/12.png" width="40%" >
 </div>
 
 - 这里的IP地址可以是办公室局域网内部的ip，也可以是通过Zerotier One搭建的虚拟局域网IP，查询虚拟局域网IP详见上文“Zerotier One的注册与使用 / Ubuntu的安装”最后一步
@@ -239,7 +239,7 @@ sudo zerotier-cli join 你的network ID
 3. 输入登录名和密码
 
 <div align="center">
-<img src="../images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/13.png" width="80%" height="80%">
+<img src="images/Ubuntu18-04和win10使用ZerotierOne进行mstsc远程连接/13.png" width="80%" height="80%">
 </div>
 
 4. 点OK，连接上，开始办公!

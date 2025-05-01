@@ -215,7 +215,7 @@ sudo docker run -it t:0.1 bash
 
 4. 在Docker Hub中创建自己的repository
 
-   <img src="../images/Docker学习笔记/image-20230128160353125.png" alt="image-20230128160353125" style="zoom:80%;" />
+   <img src="images/Docker学习笔记/image-20230128160353125.png" alt="image-20230128160353125" style="zoom:80%;" />
 
 	可选pubilc还是private，只是private只能有一个
 
@@ -225,7 +225,7 @@ sudo docker run -it t:0.1 bash
    sudo docker push a171232886/test:0.1
    ```
    
-   <img src="../images/Docker学习笔记/image-20230128161331985.png" alt="image-20230128161331985" style="zoom:70%;" />
+   <img src="images/Docker学习笔记/image-20230128161331985.png" alt="image-20230128161331985" style="zoom:70%;" />
 
 6. 拉去镜像到本地
 

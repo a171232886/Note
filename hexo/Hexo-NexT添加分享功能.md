@@ -70,5 +70,5 @@ categories:
 
     最终会在文章尾见到，以下图标
 <div align="center"> 
-<img src="../images/Hexo-NexT添加分享功能/0.png" width="50%"> 
+<img src="images/Hexo-NexT添加分享功能/0.png" width="50%"> 
 </div> 

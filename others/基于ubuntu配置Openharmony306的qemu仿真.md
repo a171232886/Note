@@ -239,7 +239,7 @@ hb set
 ```
 
 
-<img src="../images/基于ubuntu配置Openharmony306的qemu仿真/f8cb05ea74f549679687c1b8d64cea0d.png" alt="f8cb05ea74f549679687c1b8d64cea0d" style="zoom:80%;" />
+<img src="images/基于ubuntu配置Openharmony306的qemu仿真/f8cb05ea74f549679687c1b8d64cea0d.png" alt="f8cb05ea74f549679687c1b8d64cea0d" style="zoom:80%;" />
 
 ```
 hb build -f

@@ -15,7 +15,7 @@ categories:
 # Hexo的主题
 官方在https://hexo.io/themes/, 罗列了348种主题。挑一款自己最喜欢的吧。同时，使用Hexo的大佬们也会在自己的Github网站分享自己的改良版主题。由于NexT主题集成的插件多（网上的教程多），小王转向了NexT。
 <div align="center"> 
-<img src="../images/Hexo使用NexT主题与完成第一篇博客/0.png" width="80%"> 
+<img src="images/Hexo使用NexT主题与完成第一篇博客/0.png" width="80%"> 
 </div> 
 
 ## NexT主题
@@ -60,7 +60,7 @@ hexo s
 ```
 访问http://localhost:4000/
 <div align="center"> 
-<img src="../images/Hexo使用NexT主题与完成第一篇博客/1.png" width="80%"> 
+<img src="images/Hexo使用NexT主题与完成第一篇博客/1.png" width="80%"> 
 </div> 
 5. 上传GitHub
 

@@ -39,7 +39,7 @@ sudo apt-get install cmake-qt-gui
 
 我的百度网盘分享中包含三个文件，压缩包是那个正确Caffe代码（Github下载），剩下的两个是我配置好的文件，可以直接用的那种。
 <div align="center"> 
-<img src="../images/Ubuntu18_04-CaffeGPU-MATLAB接口/0.png" width="80%"> 
+<img src="images/Ubuntu18_04-CaffeGPU-MATLAB接口/0.png" width="80%"> 
 </div> 
 
  - 把压缩包解压，对应的文件夹名caffe-rpnbf-cudnn5-master改为caffe（不改也行，只是为了方便）
@@ -108,7 +108,7 @@ Makefile第181行，修改为
   export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:/usr/local/cuda-10.2/lib64
   ```
   <div align="center"> 
-  <img src="../images/Ubuntu18_04-CaffeGPU-MATLAB接口/1.png" width="80%"> 
+  <img src="images/Ubuntu18_04-CaffeGPU-MATLAB接口/1.png" width="80%"> 
   </div> 
 
  - 使修改的环境变量生效
@@ -135,7 +135,7 @@ sudo make mattest  -j32
 ```
 ==**若看见下图，恭喜！编译成功！**==
 <div align="center"> 
-<img src="../images/Ubuntu18_04-CaffeGPU-MATLAB接口/2.png" width="80%"> 
+<img src="images/Ubuntu18_04-CaffeGPU-MATLAB接口/2.png" width="80%"> 
 </div> 
 
 # 在MatlabR2017a中使用Caffe
@@ -158,7 +158,7 @@ end
 
 下图是我从代码运行结果中挑出的一张比较喜欢的图片
 <div align="center"> 
-<img src="../images/Ubuntu18_04-CaffeGPU-MATLAB接口/3.png" width="80%"> 
+<img src="images/Ubuntu18_04-CaffeGPU-MATLAB接口/3.png" width="80%"> 
 </div> 
 大功告成！
 
@@ -184,7 +184,7 @@ conda install caffe-gpu
 
 2.使用import caffe
 <div align="center"> 
-<img src="../images/Ubuntu18_04-CaffeGPU-MATLAB接口/4.png" width="80%"> 
+<img src="images/Ubuntu18_04-CaffeGPU-MATLAB接口/4.png" width="80%"> 
 </div> 
 
 # 结语

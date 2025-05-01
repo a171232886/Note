@@ -18,10 +18,10 @@ categories:
 这东西可以理解为，一个口令
 1. 登录Github，依次找到Settings/Developer settings/OAuth Apps，然后New OAuth App，进入[申请](https://github.com/settings/applications/new)。按以下格式填写就可以。**注意，用https**
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8使用Gitalk/0.png" width="50%"> 
+<img src="images/Hexo-NexT8-8使用Gitalk/0.png" width="50%"> 
 </div> 
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8使用Gitalk/1.png" width="60%"> 
+<img src="images/Hexo-NexT8-8使用Gitalk/1.png" width="60%"> 
 </div> 
 当然，要是忘记Client secrets，可以再申请一个新的，并将以前的作废。
 
@@ -78,15 +78,15 @@ hexo d
 ```
 2. 打开网页以后会看到
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8使用Gitalk/2.png" width="30%"> 
+<img src="images/Hexo-NexT8-8使用Gitalk/2.png" width="30%"> 
 </div> 
 3. 登录，会弹出一个授权询问，授权。
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8使用Gitalk/3.png" width="50%"> 
+<img src="images/Hexo-NexT8-8使用Gitalk/3.png" width="50%"> 
 </div> 
 4. 最终可以看到
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8使用Gitalk/4.png" width="50%"> 
+<img src="images/Hexo-NexT8-8使用Gitalk/4.png" width="50%"> 
 </div> 
 
 
@@ -98,7 +98,7 @@ hexo d
 #  问题解答
 Q：出现这种状况怎么办？
 <div align="center"> 
-<img src="../images/Hexo-NexT8-8使用Gitalk/5.png" width="30%"> 
+<img src="images/Hexo-NexT8-8使用Gitalk/5.png" width="30%"> 
 </div> 
 A：查一下 E:\\Blog\\theme\\next\\_config.yml 中的gitalk的proxy是不是https://github.com/login/oauth/access_token
 

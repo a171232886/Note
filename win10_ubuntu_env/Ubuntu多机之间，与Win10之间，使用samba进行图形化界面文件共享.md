@@ -8,7 +8,7 @@ categories:
 # 前言
 预想达到的效果：多台Ubuntu之间，Ubuntu和win10之间，只用ip地址就可可以进行==图形化界面文件共享==。比如以下效果，看上去就是一个特殊的文件夹。
 <div align="center"> 
-<img src="../images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/0.png" width="80%"> 
+<img src="images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/0.png" width="80%"> 
 </div> 
 
 这样的效果对于含多台ubuntu服务器的实验室来说是很有帮助的，**既可以免去用硬盘在多服务器上拷贝数据的痛苦，又可以用自己的win10电脑轻易查看服务器文件**。
@@ -95,27 +95,27 @@ sudo smbpasswd -a ubuntu
 # Win10访问
 在文件管理器地址栏，输入```\\ip地址\\共享文件夹显示名```，比如```\\192.168.193.121\share```。（==注意斜线方向==）弹出对话框，输入账户密码，确定。
 <div align="center"> 
-<img src="../images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/1.png" width="40%"> 
+<img src="images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/1.png" width="40%"> 
 </div> 
 <div align="center"> 
-<img src="../images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/2.png" width="80%"> 
+<img src="images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/2.png" width="80%"> 
 </div> 
 
 # Ubuntu访问
 在文件管理器地址栏，输入```smb://ip地址/共享文件夹显示名```，比如```smb://192.168.193.200/share```。输入账户密码，确定。
 <div align="center"> 
-<img src="../images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/3.png" width="30%"> 
+<img src="images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/3.png" width="30%"> 
 </div> 
 
 注意左下角，如果上面选择“记到注销之前”或者“永远记住”，是会保留的。
 <div align="center"> 
-<img src="../images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/4.png" width="80%"> 
+<img src="images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/4.png" width="80%"> 
 </div> 
 
 # 多说一点
 如果在远程文件夹中打开终端，会发现有一串地址，比如
 <div align="center"> 
-<img src="../images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/5.png" width="80%"> 
+<img src="images/Ubuntu多机之间，与Win10之间，使用samba进行图形化界面文件共享/5.png" width="80%"> 
 </div> 
 这个地址（蓝色部分）甚至可以在Python程序中使用，完成对文件的远程读写。读写速度主要取决于网速。
 

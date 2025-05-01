@@ -10,7 +10,7 @@ categories:
 
 在网上看到了一张很好的图，可以表示整个关系。
 <div align="center"> 
-<img src="../images/CNN中感受野的计算/0.png" width="40%"> 
+<img src="images/CNN中感受野的计算/0.png" width="40%"> 
 
 [图片来源](https://www.cnblogs.com/objectDetect/p/5947169.html)
 </div> 
@@ -29,7 +29,7 @@ $${l_i}={l_{i-1}} + (\prod_{n = 1}^{i - 1} s_n )( {k_i}-1 )$$
 
 做一道题
 <div align="center"> 
-<img src="../images/CNN中感受野的计算/1.png" width="60%"> 
+<img src="images/CNN中感受野的计算/1.png" width="60%"> 
 </div> 
 
 可以得到

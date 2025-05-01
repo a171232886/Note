@@ -10,7 +10,7 @@ categories:
 首先放一张四种归一化的对比
 
 <div align="center"> 
-<img src="../images/Pytorch中的BatchNorm/0.png" width="80%"> 
+<img src="images/Pytorch中的BatchNorm/0.png" width="80%"> 
 </div> 
 
 <!--more-->
@@ -19,7 +19,7 @@ categories:
 最基础的这个。原论文给出的流程：
 
 <div align="center"> 
-<img src="../images/Pytorch中的BatchNorm/1.png" width="50%"> 
+<img src="images/Pytorch中的BatchNorm/1.png" width="50%"> 
 </div> 
 就是先对送进来的数据计算均值和方差，然后归一化，最后再拟合一下。
 再对应一下pytorch中的公式。没问题，可以完美对应。
@@ -50,7 +50,7 @@ tensor([0.9955, 0.9959, 1.0055])
 
 再看看bn都包含什么
 <div align="center"> 
-<img src="../images/Pytorch中的BatchNorm/2.png" width="60%"> 
+<img src="images/Pytorch中的BatchNorm/2.png" width="60%"> 
 </div> 
 可以发现：
 
@@ -79,7 +79,7 @@ tensor([0.9955, 0.9959, 1.0055])
 
 而pytorch官方解释也是不太清楚
 <div align="center"> 
-<img src="../images/Pytorch中的BatchNorm/3.png" width="80%"> 
+<img src="images/Pytorch中的BatchNorm/3.png" width="80%"> 
 </div> 
 明显，momentum用于更新均值和方差。但是这个x的上标是怎么回事？对拟合后的数据进行计算均值和方差？
 

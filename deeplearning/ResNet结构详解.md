@@ -15,7 +15,7 @@ categories:
 ## 首先看ResNet34的对比图
 不用看细节，也不用自己数。
 <div align="center"> 
-<img src="../images/ResNet结构详解/0.png" width="30%"> 
+<img src="images/ResNet结构详解/0.png" width="30%"> 
 </div> 
 
 这里的34层实际上是指左面的“34-layer-plain”中有34个层需要有可训练参数（卷积层和全连接层）。那么直接对比过来，ResNet34是指**除去残差连接中的卷积层**中的卷积层和全连接层。
@@ -24,7 +24,7 @@ categories:
 
 ## 然后再看这个表
 <div align="center"> 
-<img src="../images/ResNet结构详解/1.png" width="80%"> 
+<img src="images/ResNet结构详解/1.png" width="80%"> 
 </div> 
 以34为例，34=1+2*（3+4+6+3）+1。
 也就是，最上面的多少层是在**不考虑残差连接层中的卷积层**下，数出来“plain结构”中的可训练网络层，包含卷积层和全连接层；**而不是ResNet中所有的可训练网络层**。
@@ -40,29 +40,29 @@ categories:
 ## ResNet-34
 残差结构是这个样子，和表中可以明显的对应，也对应第一张图中的**实线连接**结构。
 <div align="center"> 
-<img src="../images/ResNet结构详解/2.png" width="30%"> 
+<img src="images/ResNet结构详解/2.png" width="30%"> 
 </div> 
 让我们具体一点，紫色代表卷积层。这里为了通用性，没有画输入输出通道数。
 <div align="center"> 
-<img src="../images/ResNet结构详解/3.png" width="30%"> 
+<img src="images/ResNet结构详解/3.png" width="30%"> 
 </div> 
 
 ### 虚线结构
 比如ResNet34的Conv2_x的第一个卷积块，这里直接记为Conv3_1。它的输入是[56,56,64]（可根据conv2_x的输出[112,112,64]计算得到），但是Conv3_1的输出是[28,28,128]，**维度不相等没有办直接相加，因此，添加了一个卷积层**。
 <div align="center"> 
-<img src="../images/ResNet结构详解/4.png" width="30%"> 
+<img src="images/ResNet结构详解/4.png" width="30%"> 
 </div> 
 
 具体一点，
 <div align="center"> 
-<img src="../images/ResNet结构详解/5.png" width="50%"> 
+<img src="images/ResNet结构详解/5.png" width="50%"> 
 </div> 
 
 
 有这两个结构以后就可以搭建整个网络了。
 
 <div align="center"> 
-<img src="../images/ResNet结构详解/6.png" width="50%"> 
+<img src="images/ResNet结构详解/6.png" width="50%"> 
 </div> 
 
 
@@ -71,20 +71,20 @@ categories:
 
 ### 第一种：只用于conv2_1
 <div align="center"> 
-<img src="../images/ResNet结构详解/7.png" width="40%"> 
+<img src="images/ResNet结构详解/7.png" width="40%"> 
 </div> 
 
 ### 第二种：所有的Block中的非第一个
 以Conv2_2为例
 
 <div align="center"> 
-<img src="../images/ResNet结构详解/8.png" width="40%"> 
+<img src="images/ResNet结构详解/8.png" width="40%"> 
 </div> 
 
 ### 第三种：conv3_1和conv4_1和conv5_1
 相当于ResNet34的虚线结构，以conv3_1为例。此处以代码实现版本为准。需要同时处理尺度和维度的变化。
 <div align="center"> 
-<img src="../images/ResNet结构详解/9.png" width="60%"> 
+<img src="images/ResNet结构详解/9.png" width="60%"> 
 </div> 
 
 以下是代码作者的注释

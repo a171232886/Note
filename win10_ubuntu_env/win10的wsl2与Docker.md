@@ -140,14 +140,14 @@ categories:
 
    新建规则->端口
 
-   <img src="../images/win10的wsl2与Docker/image-20240206152502187.png" alt="image-20240206152502187" style="zoom:33%;" />
+   <img src="images/win10的wsl2与Docker/image-20240206152502187.png" alt="image-20240206152502187" style="zoom:33%;" />
 
 
 3. 设置具体端口，比如1000-1100
 
    其余部分直接下一步即可
 
-   <img src="../images/win10的wsl2与Docker/image-20240206152914548.png" alt="image-20240206152914548" style="zoom:40%;" />
+   <img src="images/win10的wsl2与Docker/image-20240206152914548.png" alt="image-20240206152914548" style="zoom:40%;" />
 
 4. 启用规则
 

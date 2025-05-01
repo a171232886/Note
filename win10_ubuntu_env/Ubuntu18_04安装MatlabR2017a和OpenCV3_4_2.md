@@ -37,27 +37,27 @@ sudo /media/HardDisk/公共安装包/MATLAB_R2017a_install/matlab/install
 ```
 1. 使用文件安装密钥，下一步
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/0.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/0.png" width="80%"> 
 </div> 
 2. 是，下一步
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/1.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/1.png" width="80%"> 
 </div> 
 3. 输入密钥09806-07443-53955-64350-21751-41297，下一步
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/2.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/2.png" width="80%"> 
 </div> 
 4. 默认路径即可，下一步
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/3.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/3.png" width="80%"> 
 </div> 
 5. 默认全选，下一步
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/4.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/4.png" width="80%"> 
 </div> 
 6. 重点来了，需要弹出DVD1 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/5.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/5.png" width="80%"> 
 </div> 
 
 - 方法1：
@@ -67,7 +67,7 @@ sudo /media/HardDisk/公共安装包/MATLAB_R2017a_install/matlab/install
 
 - 方法2：在文件管理器中找到MATHWORKS_R2017A，右键卸载。（这张图是我在Ubuntu20.04上安装Matlab照的，Ubuntu18.04一样）
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/6.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/6.png" width="80%"> 
 </div> 
 然后挂载DVD2，再点确定
 
@@ -77,7 +77,7 @@ sudo mount -o loop '/media/HardDisk/公共安装包/MATLAB_R2017a_install/matlab
 
 7. 安装结束
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/7.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/7.png" width="80%"> 
 </div> 
 
 ## 破解
@@ -93,18 +93,18 @@ sudo cp libmwservices.so /usr/local/MATLAB/R2017a/bin/glnxa64/
 /usr/local/MATLAB/R2017a/bin/matlab
 ```
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/8.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/8.png" width="80%"> 
 </div> 
 Ubuntu18.04可能会出现以下窗口，按步骤来即可
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/9.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/9.png" width="80%"> 
 </div> 
 许可证就是Matlab+2017a+Linux64+Crack.zip中的license_standalone.lic
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/10.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/10.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/11.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/11.png" width="80%"> 
 </div> 
 如果遇到权限不够情况，就加上sudo
 ```bash
@@ -116,7 +116,7 @@ sudo /usr/local/MATLAB/R2017a/bin/matlab
 1.桌面右键，创建启动器
 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/12.png" width="10%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/12.png" width="10%"> 
 </div> 
 
 2.名称随便写一个，比如Matlab。
@@ -125,12 +125,12 @@ sudo /usr/local/MATLAB/R2017a/bin/matlab
   或者```sudo /usr/local/MATLAB/R2017a/bin/matlab```。
 - 选上在终端运行。
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/13.png" width="30%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/13.png" width="30%"> 
 </div> 
 
 3.下次直接点创建的启动器就可以了
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/14.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/14.png" width="80%"> 
 </div> 
 
 # 安装OpenCV3.4.5（使用cmake-gui）
@@ -162,38 +162,38 @@ cmake-gui ..
  - 选择source code，就是OpenCV3.4.5文件夹
  - build路径，就是刚才建立的build文件夹
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/15.png" width="50%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/15.png" width="50%"> 
 </div> 
 
 3. 弹出以下对话框，不用管，默认即可，点Finish
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/16.png" width="50%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/16.png" width="50%"> 
 </div> 
 
 4. 可以见到如下界面。
 见到Configuring Done即可
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/17.png" width="50%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/17.png" width="50%"> 
 </div> 
 
 去掉三个地方的√，ENABLE_PRECOMPILED_HEADERS，WITH_CUDA，WITH_CUFFT
 （此处参考[ubuntu18.04系统安装caffe过程](https://www.cnblogs.com/yangyuqing/p/12932434.html)，这里装OpenCV是为了安装Caffe）
 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/18.png" width="30%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/18.png" width="30%"> 
 </div> 
 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/19.png" width="30%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/19.png" width="30%"> 
 </div> 
 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/20.png" width="20%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/20.png" width="20%"> 
 </div> 
 
 点击Generate生成配置文件
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/21.png" width="50%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/21.png" width="50%"> 
 </div> 
 
 
@@ -205,7 +205,7 @@ sudo make install
 ```
 最终可以看到
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/22.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/22.png" width="80%"> 
 </div> 
 6. 运行代码查看OpenCV版本
 
@@ -214,7 +214,7 @@ pkg-config --modversion opencv
 ```
 
 <div align="center"> 
-<img src="../images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/23.png" width="80%"> 
+<img src="images/Ubuntu18_04安装MatlabR2017a和OpenCV3_4_2/23.png" width="80%"> 
 </div> 
 安装完成！
 

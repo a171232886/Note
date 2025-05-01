@@ -25,7 +25,7 @@ out = conv(x1)
 
 计算过程可由下图得到。具体分析，详见上一篇博客[Pytorch中的卷积、空洞卷积和组卷积](https://blog.csdn.net/a171232886/article/details/121467164)
 <div align="center"> 
-<img src="../images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/0.png" width="80%"> 
+<img src="images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/0.png" width="80%"> 
 </div> 
 
 对于输入$(1,C_{in},H_{in},W_{in})$，输出${C_{out}}$个维度时，所需要的的卷积核维度为$(C_{out}，C_{in},H_{k},W_{k})$。先假设BatchSize大小 $B$ 与这个过程无关，也就是一个Batch中的所有输入$(B,C_{in},H_{in},W_{in})$都被同一组卷积核卷积，因此上图只画出了其中一个输入的卷积过程。
@@ -34,7 +34,7 @@ out = conv(x1)
 先看看官方定义
 ```torch.nn.functional.conv2d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) → Tensor```
 <div align="center"> 
-<img src="../images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/1.png" width="60%"> 
+<img src="images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/1.png" width="60%"> 
 </div>
 
 看着和Conv2d一样，但其中的groups在里面是干什么的？不要紧，先看一个最基础的例子，即输入$(1,C_{in},H_{in},W_{in})$，输出通道数$C_{out}=1$。根据上面的分析，可以得到卷积核的维度为$(1,C_{in},H_{k},W_{k})$
@@ -58,7 +58,7 @@ torch.Size([1, 1, 129, 129])
 
 上面那个例子也就是目标跟踪中SiamFC在跟踪时的Correlation过程，
 <div align="center"> 
-<img src="../images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/2.png" width="60%"> 
+<img src="images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/2.png" width="60%"> 
 </div> 
 
 # 标准卷积考虑Batch的影响
@@ -89,7 +89,7 @@ torch.Size([1, 8, 129, 129])
 
 直观一点的图
 <div align="center"> 
-<img src="../images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/3.png" width="80%"> 
+<img src="images/Pytorch中torch.nn.functional.conv2d与深度可分离卷积和标准卷积/3.png" width="80%"> 
 </div> 
 
 # 深度可分离卷积

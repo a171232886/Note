@@ -135,7 +135,7 @@ categories:
 不太重要的提示
 
 <div align="center"> 
-<img src="../images/Linux学习笔记/0.png" width="80%"> 
+<img src="images/Linux学习笔记/0.png" width="80%"> 
 </div> 
 
 ### 8.mv移动命令（剪切）和重命名，
@@ -235,7 +235,7 @@ drwxrwxr-x 2 wh wh 4096 2月  12 20:53 howaa
 ```ln 1.txt 1_hard```给1.txt创建一个名为1_hard的快捷方式，但保存内容。
 
 <div align="center"> 
-<img src="../images/Linux学习笔记/1.png" width="60%"> 
+<img src="images/Linux学习笔记/1.png" width="60%"> 
 </div> 
 
 注意：
@@ -251,14 +251,14 @@ drwxrwxr-x 2 wh wh 4096 2月  12 20:53 howaa
 - ```grep hello 1.txt```在1.txt中寻找"hello''
 
 <div align="center"> 
-<img src="../images/Linux学习笔记/2.png" width="80%"> 
+<img src="images/Linux学习笔记/2.png" width="80%"> 
 </div> 
 
 - ```grep hello a -r```在文件夹a下的所有文件中寻找"hello''
 - ```grep -n ^h 1.txt```查找以h开头的，```grep -n h$ 1.txt```查找以h结尾的。==空格也算字符。==
 
 <div align="center"> 
-<img src="../images/Linux学习笔记/3.png" width="80%"> 
+<img src="images/Linux学习笔记/3.png" width="80%"> 
 </div> 
 
 
@@ -283,7 +283,7 @@ drwxrwxr-x 2 wh wh 4096 2月  12 20:53 howaa
 
 
 <div align="center"> 
-<img src="../images/Linux学习笔记/4.png" width="80%"> 
+<img src="images/Linux学习笔记/4.png" width="80%"> 
 </div> 
 
 
@@ -352,7 +352,7 @@ drwxrwxr-x 2 wh wh 4096 2月  12 20:53 howaa
 9. 关机与重启
 
 <div align="center"> 
-<img src="../images/Linux学习笔记/5.png" width="80%"> 
+<img src="images/Linux学习笔记/5.png" width="80%"> 
 </div> 
 
 ​	一般来说就是用```sudo reboot```

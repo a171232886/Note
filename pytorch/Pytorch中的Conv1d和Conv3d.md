@@ -24,7 +24,7 @@ torch.Size([1, 2, 4])
 
 下图的红色部分的计算过程，实际上就是这段代码。
 <div align="center"> 
-<img src="../images/Pytorch中的Conv1d和Conv3d/0.png" width="50%"> 
+<img src="images/Pytorch中的Conv1d和Conv3d/0.png" width="50%"> 
 </div> 
 
 # Conv3d
@@ -46,7 +46,7 @@ torch.Size([1, 2, 7, 253, 253])
 
 对于上述代码情况，我将其过程图画在下面。(花了半个晚上才画好)
 <div align="center"> 
-<img src="../images/Pytorch中的Conv1d和Conv3d/1.png" width="80%"> 
+<img src="images/Pytorch中的Conv1d和Conv3d/1.png" width="80%"> 
 </div> 
 
 注意：

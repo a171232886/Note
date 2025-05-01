@@ -9,7 +9,7 @@ mathjax: true
 # 标准卷积Conv2d
 最基础的卷积。下面图虽然丑了点，但足够说明问题了。
 <div align="center"> 
-<img src="../images/Pytorch中的卷积、空洞卷积和组卷积/0.png" width="80%"> 
+<img src="images/Pytorch中的卷积、空洞卷积和组卷积/0.png" width="80%"> 
 </div> 
 注：
 	（1） kernel的值在初始化中是随机生成的，可以每个值之间都不一样。				   
@@ -51,7 +51,7 @@ $$ W_{out} = \left\lfloor\frac{W_{in}  + 2 \times \text{padding}[1] - \text{dila
 
 先来一张示意图（图来自于网络）。
 <div align="center"> 
-<img src="../images/Pytorch中的卷积、空洞卷积和组卷积/1.gif" width="30%"> 
+<img src="images/Pytorch中的卷积、空洞卷积和组卷积/1.gif" width="30%"> 
 </div> 
 上图表明：当kernel_size=3时，如果将dilation=2，就可以获得相当于kernel_size=5的感受野效果。dilation=3，相当于kernel_size=7。。。通过上面的公式计算，也可以验证。
 
@@ -67,7 +67,7 @@ $$ W_{out} = \left\lfloor\frac{W_{in}  + 2 \times \text{padding}[1] - \text{dila
 2.	groups = 2 分组卷积 ，相当于有两个卷积层，每一层的输入为原来输入通道数的一半，输出也为原来输出的一半，然后再连接：
 
 	<div align="center"> 
-	<img src="../images/Pytorch中的卷积、空洞卷积和组卷积/2.png" width="80%"> 
+	<img src="images/Pytorch中的卷积、空洞卷积和组卷积/2.png" width="80%"> 
 	</div> 
 	
 	```python

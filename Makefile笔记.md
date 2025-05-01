@@ -120,7 +120,7 @@ void print_num();
 
 cmake根据CMakeList生成makefile，然后make根据makefile生成可执行文件
 
-<img src="../images/Makefile笔记\image-20221025144322222.png" alt="image-20221025144322222" style="zoom: 80%;" />
+<img src="images/Makefile笔记\image-20221025144322222.png" alt="image-20221025144322222" style="zoom: 80%;" />
 
 图片来源：https://blog.csdn.net/weixin_42491857/article/details/80741060
 

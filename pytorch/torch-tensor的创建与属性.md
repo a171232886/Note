@@ -16,7 +16,7 @@ categories:
 ```torch.tensor(data, dtype=None, device=None, requires_grad=False, pin_memory=False) → Tensor ```
 
 <div align="center"> 
-<img src="../images/torch-tensor的创建与属性/0.png" width="80%"> 
+<img src="images/torch-tensor的创建与属性/0.png" width="80%"> 
 </div> 
 注：
 
@@ -34,7 +34,7 @@ categories:
 其实这里面好多都是 [autograd](https://pytorch.org/docs/1.4.0/autograd.html#tensor-autograd-functions)重的东西，挑几个重要的（用过的）研究了一下。因为涉及一些其他重要概念，所以这一部分会多一些。
 
 <div align="center"> 
-<img src="../images/torch-tensor的创建与属性/1.png" width="50%"> 
+<img src="images/torch-tensor的创建与属性/1.png" width="50%"> 
 </div> 
 
 ## （一）is_leaf，grad，grad_fn
@@ -55,7 +55,7 @@ z = y + b
 
 构成一张前项计算图。
 <div align="center"> 
-<img src="../images/torch-tensor的创建与属性/2.png" width="20%"> 
+<img src="images/torch-tensor的创建与属性/2.png" width="20%"> 
 </div> 
 
 <center>

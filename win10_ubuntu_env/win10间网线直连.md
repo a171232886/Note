@@ -19,7 +19,7 @@ categories:
 
    - 添加`OpenSSH 客户端`和`OpenSSH 服务器`
 
-   <img src="../images/win10间网线直连/image-20240206111934207.png" alt="image-20240206111934207" style="zoom:33%;" />
+   <img src="images/win10间网线直连/image-20240206111934207.png" alt="image-20240206111934207" style="zoom:33%;" />
 
 2. 使用管理员权限打开cmd
 
@@ -54,7 +54,7 @@ categories:
 
 任务栏`搜索` -> `查看网络连接` -> `以太网` -> `属性` --> `Internet 协议版本 4 (TCP/IPv4) ` -> `属性`
 
-<img src="../images/win10间网线直连/image-20240206112844315.png" alt="image-20240206112844315" style="zoom: 33%;" />
+<img src="images/win10间网线直连/image-20240206112844315.png" alt="image-20240206112844315" style="zoom: 33%;" />
 
 1. 主机A设置为
 
@@ -77,7 +77,7 @@ categories:
 
    然后关闭防火墙
 
-   <img src="../images/win10间网线直连/image-20240206142727051.png" alt="image-20240206142727051" style="zoom:30%;" />
+   <img src="images/win10间网线直连/image-20240206142727051.png" alt="image-20240206142727051" style="zoom:30%;" />
 
 ## 3.2 细致方法：配置防火墙
 
@@ -90,7 +90,7 @@ categories:
 
    此时，对方可以正常使用`ping`查看网络连接是否通畅
 
-   <img src="../images/win10间网线直连/image-20240206144914510.png" alt="image-20240206144914510" style="zoom:33%;" />
+   <img src="images/win10间网线直连/image-20240206144914510.png" alt="image-20240206144914510" style="zoom:33%;" />
 
 ## 4. 传输文件
 

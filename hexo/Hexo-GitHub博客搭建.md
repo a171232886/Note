@@ -39,7 +39,7 @@ npm -v   # 查看Node.js自带的npm的版本，npm相当于python中的pip
 1. 在[Github官网](https://github.com/)的“Sign Up”处直接注册就行，需要一个已有的邮箱即可。
 2. 新建一个库，库名为XXX.github.io，其中XXX是你的用户名，比如a171232886.github.io。这样写，GitHub才能把这个库“翻译”成网页。然后点击Create repository。
 <div align="center"> 
-<img src="../images/Hexo-GitHub博客搭建/0.png" width="60%"> 
+<img src="images/Hexo-GitHub博客搭建/0.png" width="60%"> 
 </div> 
 
 

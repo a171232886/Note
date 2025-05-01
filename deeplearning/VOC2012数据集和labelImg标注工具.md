@@ -15,17 +15,17 @@ categories:
 <!--more-->
 
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/0.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/0.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/1.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/1.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/2.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/2.png" width="80%"> 
 </div> 
 
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/3.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/3.png" width="80%"> 
 </div> 
 
 # labelImg标注工具
@@ -41,13 +41,13 @@ pip install labelImg
 labelImg [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 ```
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/4.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/4.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/5.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/5.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/VOC2012数据集和labelImg标注工具/6.png" width="80%"> 
+<img src="images/VOC2012数据集和labelImg标注工具/6.png" width="80%"> 
 </div> 
 
 

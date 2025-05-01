@@ -38,23 +38,23 @@ VMware 17 官网：https://www.vmware.com/cn/products/workstation-pro/workstatio
 
 1. 打开VMware，菜单栏点击“文件”->"新建虚拟机"
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127112910570.png" alt="image-20221127112910570" style="zoom: 67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127112910570.png" alt="image-20221127112910570" style="zoom: 67%;" />
 
 2. 选择镜像并输入相关信息，并开始安装
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127113020828.png" alt="image-20221127113020828" style="zoom:67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127113020828.png" alt="image-20221127113020828" style="zoom:67%;" />
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127113334682.png" alt="image-20221127113334682" style="zoom:67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127113334682.png" alt="image-20221127113334682" style="zoom:67%;" />
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127113446264.png" alt="image-20221127113446264" style="zoom:67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127113446264.png" alt="image-20221127113446264" style="zoom:67%;" />
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127113510013.png" alt="image-20221127113510013" style="zoom:67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127113510013.png" alt="image-20221127113510013" style="zoom:67%;" />
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127113535281.png" alt="image-20221127113535281" style="zoom:67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127113535281.png" alt="image-20221127113535281" style="zoom:67%;" />
 
 3. 等待安装完毕，显示
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127121407304.png" alt="image-20221127121407304" style="zoom:80%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127121407304.png" alt="image-20221127121407304" style="zoom:80%;" />
 
 
 
@@ -75,11 +75,11 @@ VMware 17 官网：https://www.vmware.com/cn/products/workstation-pro/workstatio
 
 2. VMware设置。在左侧栏中选择虚拟机（这里是Ubuntu_t），右键“设置”。弹出对话框，“网络适配器”->"网络连接"->"NAT模式"->"确定"。
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127122004459.png" alt="image-20221127122004459" style="zoom: 67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127122004459.png" alt="image-20221127122004459" style="zoom: 67%;" />
 
 3. Ubutnu的设置
 
-   <img src="../images/VMWare安装Ubuntu20.04虚拟机/image-20221127123217512.png" alt="image-20221127123217512" style="zoom: 67%;" />
+   <img src="images/VMWare安装Ubuntu20.04虚拟机/image-20221127123217512.png" alt="image-20221127123217512" style="zoom: 67%;" />
 
 4. 在Ubuntu中打开浏览器看看某些国外网站（如Github）访问是否流畅。
 

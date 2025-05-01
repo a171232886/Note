@@ -4,7 +4,7 @@
 
 2. gcc支持后缀名
 
-<img src="../images/GCC笔记/image-20220918160623120.png" alt="image-20220918160623120" style="zoom:80%;" />
+<img src="images/GCC笔记/image-20220918160623120.png" alt="image-20220918160623120" style="zoom:80%;" />
 
 
 
@@ -21,7 +21,7 @@
 4. 编译过程（使用`gcc -v 输入文件名 ` 查看）
 
 
-![image-20220918160252401](../images/GCC笔记/image-20220918160252401.png)
+![image-20220918160252401](images/GCC笔记/image-20220918160252401.png)
 
 ​	==“链接”一步在做什么？==连接系统标准库？
 

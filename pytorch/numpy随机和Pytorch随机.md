@@ -17,10 +17,10 @@ categories:
 
 如```numpy.random.rand(2,3)```
 <div align="center"> 
-<img src="../images/numpy随机和Pytorch随机/0.png" width="80%"> 
+<img src="images/numpy随机和Pytorch随机/0.png" width="80%"> 
 </div> 
 <div align="center"> 
-<img src="../images/numpy随机和Pytorch随机/1.png" width="80%"> 
+<img src="images/numpy随机和Pytorch随机/1.png" width="80%"> 
 </div> 
 
 ### 推荐使用方式
@@ -38,7 +38,7 @@ a.astype(np.int)
 ```random.choice(a, size=None, replace=True, p=None)```
 
 <div align="center"> 
-<img src="../images/numpy随机和Pytorch随机/2.png" width="80%"> 
+<img src="images/numpy随机和Pytorch随机/2.png" width="80%"> 
 </div> 
 
 ```python

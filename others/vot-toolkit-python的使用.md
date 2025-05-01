@@ -96,13 +96,13 @@ pip install git+https://github.com/votchallenge/vot-toolkit-python
 	此时或自动初始化该文件夹并下载数据集。文件结构为
 	
 	<div align="center"> 
-	<img src="../images/vot-toolkit-python的使用/0.png" width="40%"> 
+	<img src="images/vot-toolkit-python的使用/0.png" width="40%"> 
 	</div> 
 
 	`sequences`文件夹下就是对应的vot2016视频序列，每个视频对应一个文件夹
 
 	<div align="center"> 
-	<img src="../images/vot-toolkit-python的使用/1.png" width="80%"> 
+	<img src="images/vot-toolkit-python的使用/1.png" width="80%"> 
 	</div> 
 	<font  face="黑体"  color=#FF0000 size=4> 因此每个initialize只能对应一个数据集。</font> 
 	

@@ -26,8 +26,8 @@ categories:
 2. 本地机（Win10）一般都有ssh
 3. 本地机安装VSCode，**并且在VSCode中安装插件：Remote-SSH 和Remote Development**
 
-	<img src="../images/VSCode使用SSH免密登录远程主机/0.png" style="zoom:50%;" />
-	<img src="../images/VSCode使用SSH免密登录远程主机/1.png" style="zoom:50%;" />
+	<img src="images/VSCode使用SSH免密登录远程主机/0.png" style="zoom:50%;" />
+	<img src="images/VSCode使用SSH免密登录远程主机/1.png" style="zoom:50%;" />
 
 
 
