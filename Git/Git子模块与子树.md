@@ -499,11 +499,20 @@ git submodule update --remote --recursive	# 获取submodule的dev分支的最新
    ```bash
    #!/bin/bash
    
+   # 只在检出分支时运行（而不是文件检出）
+   if [ "$3" != "1" ]; then
+       exit 0
+   fi
+   
    # 获取当前分支名
    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+   if [ -z "$BRANCH" ]; then
+       echo "无法确定当前分支"
+       exit 1
+   fi
    
    # 递归更新子模块
-   git submodule foreach --recursive 'git checkout $BRANCH || git checkout main'
+   git submodule foreach --recursive 'git checkout '"$BRANCH"' || git checkout master'
    ```
    
    注意：本地的git hook不会上传到远端仓库。
