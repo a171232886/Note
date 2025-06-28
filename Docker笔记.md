@@ -1,11 +1,19 @@
 
 # 0. 安装
 
-```bash
-sudo wget -qO- https://get.docker.com/ | sh
-docker --version
-```
+1. 安装 docker （以及 docker compose）
+   ```bash
+   sudo wget -qO- https://get.docker.com/ | sh
+   docker --version
+   ```
+   
+2. 可选：将当前用户添加到docker用户组
+   
+   - 后续执行docker命令时，不必添加 sudo
 
+   ```bash
+   sudo usermod -aG docker <用户名>
+   ```
 
 
 # 1. 镜像image
