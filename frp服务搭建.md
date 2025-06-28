@@ -156,15 +156,22 @@
 
 ## 3.2 开机自启动
 
-1. 创建脚本 run.sh
+1. 创建脚本`run.sh`
    
    ```bash
    # run.sh
+   #!/bin/bash
    cd <frpc所在目录>
-   nohup ./frpc -c frpc.toml
+   ./frpc -c frpc.toml
    ```
    
-2. 添加自启动
+2. 将`run.sh`变为可执行文件
+   ```bash
+   chmod +x run.sh
+   ```
+   
+3. 添加自启动service
+   
    ```bash
    sudo vim /etc/systemd/system/my_startup.service
    ```
@@ -174,31 +181,30 @@
    ```
    [Unit]
    Description=My Startup Script
-   After=network.target  # 如果需要网络，可以加上
+   After=network.target
    
    [Service]
-   ExecStart=bash <run.sh所在目录>/run.sh
+   ExecStart=<run.sh所在目录>/run.sh
+   WorkingDirectory=<run.sh所在目录>
    Type=simple
-   User=root  # 可以改成你的用户名
+   User=<用户名>
 	
    [Install]
    WantedBy=multi-user.target
    ```
    
-3. 启用并启动服务
+4. 启用并启动服务
    ```bash
+   sudo systemctl daemon-reload
    sudo systemctl enable my_startup.service  # 开机自启
    sudo systemctl start my_startup.service   # 立即运行
    ```
    
-4. 检查是否运行
+5. 检查是否运行
    ```bash
    sudo systemctl status my_startup.service
    ```
 
-5. 注意
-   
-   service 中即使有nohup，也不会生成output.log，而是放入系统日志中
    
 # 4. ssh连接
 
