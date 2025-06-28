@@ -188,7 +188,9 @@
    WorkingDirectory=<run.sh所在目录>
    Type=simple
    User=<用户名>
-	
+   Restart=on-failure
+   RestartSec=5s
+   
    [Install]
    WantedBy=multi-user.target
    ```
