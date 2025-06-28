@@ -15,10 +15,14 @@
 1. 下载后解压
 
    ```bash
-   wget https://github.com/fatedier/frp/releases/download/v0.54.0/frp_0.54.0_linux_arm64.tar.gz
+   wget https://github.com/fatedier/frp/releases/download/v0.54.0/frp_0.54.0_linux_amd64.tar.gz
    ```
 
-2. 服务端对应文件为
+   注意选择正确的架构版本
+   
+   - x86_64 对应 amd64
+
+3. 服务端对应文件为
 
    ```
    ├── frps
@@ -31,7 +35,7 @@
    bindPort = 7000
    ```
 
-3. 启动服务
+4. 启动服务
 
    ```bash
    ./frps -c frps.toml
@@ -45,7 +49,12 @@
    2024/02/08 11:05:55 [I] [root.go:114] frps started successfully
    ```
 
-4. 设置ufw
+   可以使用后台运行
+   ```
+   nohup ./frps -c frps.toml &
+   ```
+
+5. 设置ufw
 
    可以直接关闭：`ufw disable`
 
@@ -57,7 +66,7 @@
 
    `安全组` -> `入方向` -> `手动添加`
 
-2. 添加端口`7000`，我为了方便直接添加7000-7100的全部端口
+2. 添加端口`7000`，开放对应端口
 
    - 7000 是用来frp客户端和服务端之间访问使用的
    - 其他的是用来给开放给客户的
@@ -91,6 +100,8 @@
 
 
 # 3. 客户端配置
+
+## 3.1 基础配置
 
 1. 下载后解压
 
@@ -143,8 +154,52 @@
    2024/02/08 05:19:28 [I] [control.go:170] [33fe641c603eba63] [test-tcp] start proxy success
    ```
 
+## 3.2 开机自启动
 
+1. 创建脚本 run.sh
+   
+   ```bash
+   # run.sh
+   cd <frpc所在目录>
+   nohup ./frpc -c frpc.toml
+   ```
+   
+2. 添加自启动
+   ```bash
+   sudo vim /etc/systemd/system/my_startup.service
+   ```
+   
+   编写脚本
+   
+   ```
+   [Unit]
+   Description=My Startup Script
+   After=network.target  # 如果需要网络，可以加上
+   
+   [Service]
+   ExecStart=bash <run.sh所在目录>/run.sh
+   Type=simple
+   User=root  # 可以改成你的用户名
+	
+   [Install]
+   WantedBy=multi-user.target
+   ```
+   
+3. 启用并启动服务
+   ```bash
+   sudo systemctl enable my_startup.service  # 开机自启
+   sudo systemctl start my_startup.service   # 立即运行
+   ```
+   
+4. 检查是否运行
+   ```bash
+   sudo systemctl status my_startup.service
+   ```
 
+5. 注意
+   
+   service 中即使有nohup，也不会生成output.log，而是放入系统日志中
+   
 # 4. ssh连接
 
 此时直接使用
