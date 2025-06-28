@@ -81,7 +81,7 @@ sudo docker run -itd --name test ubuntu:20.04 /bin/bash
 
 
 
-# 5. 技巧
+# 3. 技巧
 
 将container的命令行提示部分变成彩色
 
@@ -93,11 +93,11 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 
 
-# 6. Dockerfile
+# 4. Dockerfile
 
 通过Dockerfile构建镜像
 
-## 6.1 准备文件
+## 4.1 准备文件
 
 1. 在某个空文件夹（假设名为test）下编写Dockerfile文件
 
@@ -134,7 +134,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 
 
-## 6.2 构建镜像
+## 4.2 构建镜像
 
 ```bash
 cd test
@@ -192,7 +192,7 @@ sudo docker run -it t:0.1 bash
 
 
 
-## 6.3 上传docker hub
+## 4.3 上传docker hub
 
 1. 注册账号
 
@@ -243,7 +243,7 @@ sudo docker run -it t:0.1 bash
 
    
 
-# 7. Docker与python
+# 5. Docker与python
 
 https://docs.docker.com/engine/install/ubuntu/
 
