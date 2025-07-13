@@ -190,7 +190,7 @@ example_ci_pytest_jenkins
 
    ```dockerfile
    # 使用官方 Python 3.12 镜像（基于 Debian）
-   FROM python:3.12
+   FROM python:3.12.1
    
    # 设置工作目录
    WORKDIR /app
@@ -1034,7 +1034,21 @@ Jenkins对代码进行自动测试，将测试结果通过 GitHub API 返回给�
    ```
    
    - 选择为secret_text
-   - 名称可自定义为`GitHub-Token`
+   
+   - ID必须填写，可自定义为`GitHub-Token`
+   
+     要与后续Jenkinsfile中的environment中的一致
+   
+     ```groovy
+         environment {
+             // 使用 Secret text 类型的凭据
+             GITHUB_TOKEN = credentials('GitHub-Token')
+         }
+     ```
+   
+     
+   
+   ![image-20250713142711234](images/Jenkins/image-20250713142711234.png)
 
 
 
